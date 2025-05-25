@@ -1,0 +1,1444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="db_ab6e43_lkacsoftdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_DetailCustomers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_DetailCustomers">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="LogoS3Key" Type="varchar" MaxLength="255" />
+          <Property Name="FilterLocation" Type="nvarchar" MaxLength="255" />
+          <Property Name="GetDocsDate" Type="int" />
+          <Property Name="DateCreate" Type="date" />
+          <Property Name="Suspended" Type="bit" />
+          <Property Name="SuspendedTo" Type="date" />
+          <Property Name="Dissolved" Type="bit" />
+          <Property Name="DissolvedDate" Type="date" />
+          <Property Name="MainAccountant" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+          <Property Name="AssignedToCustomerSupport" Type="varchar" MaxLength="255" />
+          <Property Name="ResponsibleAccountantTeam" Type="varchar" MaxLength="255" />
+          <Property Name="LKACSoft_DepartmentCode" Type="varchar" MaxLength="10" />
+          <Property Name="ContractExpiry" Type="date" />
+          <Property Name="ContractSignedDate" Type="date" />
+          <Property Name="MainAccountantID" Type="varchar" MaxLength="255" />
+          <Property Name="MainAccountantUsername" Type="nvarchar" MaxLength="255" />
+          <Property Name="MainAccountantFirstname" Type="nvarchar" MaxLength="100" />
+          <Property Name="MainAccountantLastname" Type="nvarchar" MaxLength="100" />
+          <Property Name="MainAccountantAvatar" Type="nvarchar" MaxLength="255" />
+          <Property Name="MainAccountantAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="MainAccountantDistrict" Type="nvarchar" MaxLength="255" />
+          <Property Name="MainAccountantDob" Type="date" />
+          <Property Name="MainAccountantIsQuitJob" Type="bit" />
+          <Property Name="MainAccountantDateCreate" Type="date" />
+          <Property Name="MainAccountantTeam" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedByID" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedByUsername" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByFirstname" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedByLastname" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedByAvatar" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByDistrict" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByDob" Type="date" />
+          <Property Name="CreatedByIsQuitJob" Type="bit" />
+          <Property Name="CreatedByDateCreate" Type="date" />
+          <Property Name="CreatedByTeam" Type="varchar" MaxLength="255" />
+          <Property Name="AssignedSupportID" Type="varchar" MaxLength="255" />
+          <Property Name="AssignedSupportUsername" Type="nvarchar" MaxLength="255" />
+          <Property Name="AssignedSupportFirstname" Type="nvarchar" MaxLength="100" />
+          <Property Name="AssignedSupportLastname" Type="nvarchar" MaxLength="100" />
+          <Property Name="AssignedSupportAvatar" Type="nvarchar" MaxLength="255" />
+          <Property Name="AssignedSupportAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="AssignedSupportDistrict" Type="nvarchar" MaxLength="255" />
+          <Property Name="AssignedSupportDob" Type="date" />
+          <Property Name="AssignedSupportIsQuitJob" Type="bit" />
+          <Property Name="AssignedSupportDateCreate" Type="date" />
+          <Property Name="AssignedSupportTeam" Type="varchar" MaxLength="255" />
+          <Property Name="AccountantTeamID" Type="varchar" MaxLength="255" />
+          <Property Name="AccountantTeamName" Type="nvarchar" MaxLength="255" />
+          <Property Name="AccountantTeamLeader" Type="varchar" MaxLength="255" />
+          <Property Name="DepartmentCode" Type="varchar" MaxLength="10" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DepartmentDisplayOrder" Type="int" />
+          <Property Name="DepartmentClosed" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_DetailDocumentTypes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_DetailDocumentTypes">
+          <Key>
+            <PropertyRef Name="DocumentTypeID" />
+          </Key>
+          <Property Name="DocumentTypeID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocumentTypeName" Type="nvarchar" MaxLength="255" />
+          <Property Name="DocumentReceivingMechanism" Type="nvarchar" MaxLength="255" />
+          <Property Name="AvgAmount" Type="int" />
+          <Property Name="RegisteredAmount" Type="int" />
+          <Property Name="CurrentTotalAmount" Type="int" />
+          <Property Name="Code" Type="varchar" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="LogoS3Key" Type="varchar" MaxLength="255" />
+          <Property Name="FilterLocation" Type="nvarchar" MaxLength="255" />
+          <Property Name="GetDocsDate" Type="int" />
+          <Property Name="DateCreate" Type="date" />
+          <Property Name="Suspended" Type="bit" />
+          <Property Name="SuspendedTo" Type="date" />
+          <Property Name="Dissolved" Type="bit" />
+          <Property Name="DissolvedDate" Type="date" />
+          <Property Name="MainAccountant" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+          <Property Name="AssignedToCustomerSupport" Type="varchar" MaxLength="255" />
+          <Property Name="ResponsibleAccountantTeam" Type="varchar" MaxLength="255" />
+          <Property Name="LKACSoft_DepartmentCode" Type="varchar" MaxLength="10" />
+          <Property Name="ContractExpiry" Type="date" />
+          <Property Name="ContractSignedDate" Type="date" />
+          <Property Name="ArchivedAmount" Type="int" />
+          <Property Name="LendAmount" Type="int" />
+          <Property Name="LostAmount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_DetailExecutions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_DetailExecutions">
+          <Key>
+            <PropertyRef Name="ExecutionID" />
+          </Key>
+          <Property Name="ExecutionID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ExecutionName" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByForExecution" Type="varchar" MaxLength="255" />
+          <Property Name="DateCreated" Type="date" />
+          <Property Name="IsPeriodic" Type="bit" />
+          <Property Name="FieldName" Type="varchar" MaxLength="255" />
+          <Property Name="FieldValue" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedByID" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedByUsername" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByFirstname" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedByLastname" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedByAvatar" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByDistrict" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByDob" Type="date" />
+          <Property Name="CreatedByIsQuitJob" Type="bit" />
+          <Property Name="CreatedByDateCreate" Type="date" />
+          <Property Name="CreatedByTeam" Type="varchar" MaxLength="255" />
+          <Property Name="ProcessSchemaStatusID" Type="varchar" MaxLength="255" />
+          <Property Name="OrderIndex" Type="int" />
+          <Property Name="processSchemaStatusCreatedAt" Type="date" />
+          <Property Name="ProcessStatusID" Type="varchar" MaxLength="255" />
+          <Property Name="StatusName" Type="nvarchar" MaxLength="255" />
+          <Property Name="DesignatedColor" Type="varchar" MaxLength="32" />
+          <Property Name="ProcessSchemaID" Type="varchar" MaxLength="255" />
+          <Property Name="ProcessSchemaName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ProcessSchemaDescription" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedAt" Type="date" />
+          <Property Name="UpdatedAt" Type="date" />
+          <Property Name="Code" Type="varchar" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="LogoS3Key" Type="varchar" MaxLength="255" />
+          <Property Name="FilterLocation" Type="nvarchar" MaxLength="255" />
+          <Property Name="GetDocsDate" Type="int" />
+          <Property Name="DateCreate" Type="date" />
+          <Property Name="Suspended" Type="bit" />
+          <Property Name="SuspendedTo" Type="date" />
+          <Property Name="Dissolved" Type="bit" />
+          <Property Name="DissolvedDate" Type="date" />
+          <Property Name="MainAccountant" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+          <Property Name="AssignedToCustomerSupport" Type="varchar" MaxLength="255" />
+          <Property Name="ResponsibleAccountantTeam" Type="varchar" MaxLength="255" />
+          <Property Name="LKACSoft_DepartmentCode" Type="varchar" MaxLength="10" />
+          <Property Name="ContractExpiry" Type="date" />
+          <Property Name="ContractSignedDate" Type="date" />
+          <Property Name="TaskCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_DetailJobTaskFiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_DetailJobTaskFiles">
+          <Key>
+            <PropertyRef Name="JobTaskFileCode" />
+          </Key>
+          <Property Name="JobTaskFileCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="255" />
+          <Property Name="FileType" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedAt" Type="date" />
+          <Property Name="AccountantReceivedAt" Type="date" />
+          <Property Name="ReadyToBeReturnedAt" Type="date" />
+          <Property Name="PhysicalLocation" Type="nvarchar" MaxLength="255" />
+          <Property Name="ArchivedDate" Type="date" />
+          <Property Name="ReturnedDate" Type="date" />
+          <Property Name="AccountingStatusID" Type="int" />
+          <Property Name="AccountingStatusName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ArchivingStatusID" Type="int" />
+          <Property Name="ArchivingStatusName" Type="nvarchar" MaxLength="255" />
+          <Property Name="accountantID" Type="varchar" MaxLength="255" />
+          <Property Name="accountantUsername" Type="nvarchar" MaxLength="255" />
+          <Property Name="accountantFirstname" Type="nvarchar" MaxLength="100" />
+          <Property Name="accountantLastname" Type="nvarchar" MaxLength="100" />
+          <Property Name="accountantAvatar" Type="nvarchar" MaxLength="255" />
+          <Property Name="accountantAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="accountantDistrict" Type="nvarchar" MaxLength="255" />
+          <Property Name="accountantDob" Type="date" />
+          <Property Name="accountantIsQuitJob" Type="bit" />
+          <Property Name="accountantDateCreate" Type="date" />
+          <Property Name="accountantTeam" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedByID" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedByUsername" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByFirstname" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedByLastname" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedByAvatar" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByDistrict" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByDob" Type="date" />
+          <Property Name="CreatedByIsQuitJob" Type="bit" />
+          <Property Name="CreatedByDateCreate" Type="date" />
+          <Property Name="CreatedByTeam" Type="varchar" MaxLength="255" />
+          <Property Name="ExecutionID" Type="varchar" MaxLength="255" />
+          <Property Name="ExecutionName" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedByForExecution" Type="varchar" MaxLength="255" />
+          <Property Name="DateCreated" Type="date" />
+          <Property Name="IsPeriodic" Type="bit" />
+          <Property Name="DocumentTypeID" Type="varchar" MaxLength="255" />
+          <Property Name="DocumentTypeName" Type="nvarchar" MaxLength="255" />
+          <Property Name="DocumentReceivingMechanism" Type="nvarchar" MaxLength="255" />
+          <Property Name="AvgAmount" Type="int" />
+          <Property Name="RegisteredAmount" Type="int" />
+          <Property Name="Code" Type="varchar" MaxLength="255" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="LogoS3Key" Type="varchar" MaxLength="255" />
+          <Property Name="FilterLocation" Type="nvarchar" MaxLength="255" />
+          <Property Name="GetDocsDate" Type="int" />
+          <Property Name="DateCreate" Type="date" />
+          <Property Name="Suspended" Type="bit" />
+          <Property Name="SuspendedTo" Type="date" />
+          <Property Name="Dissolved" Type="bit" />
+          <Property Name="DissolvedDate" Type="date" />
+          <Property Name="MainAccountant" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+          <Property Name="AssignedToCustomerSupport" Type="varchar" MaxLength="255" />
+          <Property Name="ResponsibleAccountantTeam" Type="varchar" MaxLength="255" />
+          <Property Name="LKACSoft_DepartmentCode" Type="varchar" MaxLength="10" />
+          <Property Name="ContractExpiry" Type="date" />
+          <Property Name="ContractSignedDate" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_DetailProcessSchemaStatuses' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_DetailProcessSchemaStatuses">
+          <Key>
+            <PropertyRef Name="ProcessSchemaStatusID" />
+          </Key>
+          <Property Name="ProcessSchemaStatusID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ProcessSchema" Type="varchar" MaxLength="255" />
+          <Property Name="ProcessStatus" Type="varchar" MaxLength="255" />
+          <Property Name="OrderIndex" Type="int" />
+          <Property Name="CreatedAt" Type="date" />
+          <Property Name="ProcessSchemaID" Type="varchar" MaxLength="255" />
+          <Property Name="ProcessSchemaName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ProcessSchemaDescription" Type="nvarchar" MaxLength="255" />
+          <Property Name="ProcessSchemaCreatedAt" Type="date" />
+          <Property Name="ProcessSchemaUpdatedAt" Type="date" />
+          <Property Name="ProcessStatusID" Type="varchar" MaxLength="255" />
+          <Property Name="StatusName" Type="nvarchar" MaxLength="255" />
+          <Property Name="DesignatedColor" Type="varchar" MaxLength="32" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_DetailTasks' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_DetailTasks">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DateAssigned" Type="date" />
+          <Property Name="TaskDeadline" Type="date" />
+          <Property Name="AssignedTo" Type="varchar" MaxLength="255" />
+          <Property Name="TaskTitle" Type="nvarchar" MaxLength="255" />
+          <Property Name="TaskDetail" Type="nvarchar" MaxLength="200" />
+          <Property Name="TaskStatus" Type="varchar" MaxLength="255" />
+          <Property Name="DateAccepted" Type="date" />
+          <Property Name="DateCompleted" Type="date" />
+          <Property Name="ReviewedBy" Type="varchar" MaxLength="255" />
+          <Property Name="ReviewNote" Type="nvarchar" MaxLength="2000" />
+          <Property Name="DateReview" Type="date" />
+          <Property Name="IsRetried" Type="bit" />
+          <Property Name="RelatedToExecution" Type="varchar" MaxLength="255" />
+          <Property Name="TaskType" Type="varchar" MaxLength="255" />
+          <Property Name="DesignatedNumberOfDocument" Type="int" />
+          <Property Name="NumberOfCompletedDocument" Type="int" />
+          <Property Name="Priority" Type="varchar" MaxLength="255" />
+          <Property Name="TaskCreatedAt" Type="date" />
+          <Property Name="AssignedUserID" Type="varchar" MaxLength="255" />
+          <Property Name="AssignedUserUsername" Type="nvarchar" MaxLength="255" />
+          <Property Name="AssignedUserFirstname" Type="nvarchar" MaxLength="100" />
+          <Property Name="AssignedUserLastname" Type="nvarchar" MaxLength="100" />
+          <Property Name="AssignedUserAvatar" Type="nvarchar" MaxLength="255" />
+          <Property Name="AssignedUserAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="AssignedUserDistrict" Type="nvarchar" MaxLength="255" />
+          <Property Name="AssignedUserDob" Type="date" />
+          <Property Name="AssignedUserIsQuitJob" Type="bit" />
+          <Property Name="AssignedUserDateCreate" Type="date" />
+          <Property Name="AssignedUserTeam" Type="varchar" MaxLength="255" />
+          <Property Name="ReviewedUserID" Type="varchar" MaxLength="255" />
+          <Property Name="ReviewedUserUsername" Type="nvarchar" MaxLength="255" />
+          <Property Name="ReviewedUserFirstname" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReviewedUserLastname" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReviewedUserAvatar" Type="nvarchar" MaxLength="255" />
+          <Property Name="ReviewedUserAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="ReviewedUserDistrict" Type="nvarchar" MaxLength="255" />
+          <Property Name="ReviewedUserDob" Type="date" />
+          <Property Name="ReviewedUserIsQuitJob" Type="bit" />
+          <Property Name="ReviewedUserDateCreate" Type="date" />
+          <Property Name="ReviewedUserTeam" Type="varchar" MaxLength="255" />
+          <Property Name="ExecutionID" Type="varchar" MaxLength="255" />
+          <Property Name="ExecutionName" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+          <Property Name="DateCreated" Type="date" />
+          <Property Name="IsPeriodic" Type="bit" />
+          <Property Name="ProcessSchemaStatus" Type="varchar" MaxLength="255" />
+          <Property Name="ProcessSchemaID" Type="varchar" MaxLength="255" />
+          <Property Name="RelatedToCustomer" Type="varchar" MaxLength="255" />
+          <Property Name="TaskStatusID" Type="varchar" MaxLength="255" />
+          <Property Name="TaskStatusName" Type="nvarchar" MaxLength="255" />
+          <Property Name="TaskStatusDesignatedColor" Type="varchar" MaxLength="32" />
+          <Property Name="PriorityID" Type="varchar" MaxLength="255" />
+          <Property Name="PriorityName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PriorityDesignatedColor" Type="varchar" MaxLength="255" />
+          <Property Name="TaskTypeID" Type="varchar" MaxLength="255" />
+          <Property Name="TaskTypeName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1024" />
+          <Property Name="TaskTypeDesignatedColor" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_DetailUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_DetailUsers">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="255" />
+          <Property Name="Firstname" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Avatar" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="District" Type="nvarchar" MaxLength="255" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="IsQuitJob" Type="bit" />
+          <Property Name="UserDateCreated" Type="date" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="TeamID" Type="varchar" MaxLength="255" />
+          <Property Name="TeamName" Type="nvarchar" MaxLength="255" />
+          <Property Name="TeamLeader" Type="varchar" MaxLength="255" />
+          <Property Name="InProgressTasksCount" Type="int" />
+          <Property Name="DoneTasksCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_DetailUsersKPI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_DetailUsersKPI">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="InComplete" Type="int" />
+          <Property Name="DoneOnTime" Type="int" />
+          <Property Name="DoneBeforeDL" Type="int" />
+          <Property Name="Late" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_DocumentTypeDtos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_DocumentTypeDtos">
+          <Key>
+            <PropertyRef Name="DocumentTypeID" />
+          </Key>
+          <Property Name="DocumentTypeID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocumentTypeName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ArchivedAmount" Type="int" />
+          <Property Name="LendAmount" Type="int" />
+          <Property Name="LostAmount" Type="int" />
+        </EntityType>
+        <EntityContainer Name="db_ab6e43_lkacsoftdbModelStoreContainer">
+          <EntitySet Name="V_DetailCustomers" EntityType="Self.V_DetailCustomers" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_DetailCustomers].[Code] AS [Code], 
+    [V_DetailCustomers].[Name] AS [Name], 
+    [V_DetailCustomers].[ShortName] AS [ShortName], 
+    [V_DetailCustomers].[Address] AS [Address], 
+    [V_DetailCustomers].[LogoS3Key] AS [LogoS3Key], 
+    [V_DetailCustomers].[FilterLocation] AS [FilterLocation], 
+    [V_DetailCustomers].[GetDocsDate] AS [GetDocsDate], 
+    [V_DetailCustomers].[DateCreate] AS [DateCreate], 
+    [V_DetailCustomers].[Suspended] AS [Suspended], 
+    [V_DetailCustomers].[SuspendedTo] AS [SuspendedTo], 
+    [V_DetailCustomers].[Dissolved] AS [Dissolved], 
+    [V_DetailCustomers].[DissolvedDate] AS [DissolvedDate], 
+    [V_DetailCustomers].[MainAccountant] AS [MainAccountant], 
+    [V_DetailCustomers].[CreatedBy] AS [CreatedBy], 
+    [V_DetailCustomers].[AssignedToCustomerSupport] AS [AssignedToCustomerSupport], 
+    [V_DetailCustomers].[ResponsibleAccountantTeam] AS [ResponsibleAccountantTeam], 
+    [V_DetailCustomers].[LKACSoft_DepartmentCode] AS [LKACSoft_DepartmentCode], 
+    [V_DetailCustomers].[ContractExpiry] AS [ContractExpiry], 
+    [V_DetailCustomers].[ContractSignedDate] AS [ContractSignedDate], 
+    [V_DetailCustomers].[MainAccountantID] AS [MainAccountantID], 
+    [V_DetailCustomers].[MainAccountantUsername] AS [MainAccountantUsername], 
+    [V_DetailCustomers].[MainAccountantFirstname] AS [MainAccountantFirstname], 
+    [V_DetailCustomers].[MainAccountantLastname] AS [MainAccountantLastname], 
+    [V_DetailCustomers].[MainAccountantAvatar] AS [MainAccountantAvatar], 
+    [V_DetailCustomers].[MainAccountantAddress] AS [MainAccountantAddress], 
+    [V_DetailCustomers].[MainAccountantDistrict] AS [MainAccountantDistrict], 
+    [V_DetailCustomers].[MainAccountantDob] AS [MainAccountantDob], 
+    [V_DetailCustomers].[MainAccountantIsQuitJob] AS [MainAccountantIsQuitJob], 
+    [V_DetailCustomers].[MainAccountantDateCreate] AS [MainAccountantDateCreate], 
+    [V_DetailCustomers].[MainAccountantTeam] AS [MainAccountantTeam], 
+    [V_DetailCustomers].[CreatedByID] AS [CreatedByID], 
+    [V_DetailCustomers].[CreatedByUsername] AS [CreatedByUsername], 
+    [V_DetailCustomers].[CreatedByFirstname] AS [CreatedByFirstname], 
+    [V_DetailCustomers].[CreatedByLastname] AS [CreatedByLastname], 
+    [V_DetailCustomers].[CreatedByAvatar] AS [CreatedByAvatar], 
+    [V_DetailCustomers].[CreatedByAddress] AS [CreatedByAddress], 
+    [V_DetailCustomers].[CreatedByDistrict] AS [CreatedByDistrict], 
+    [V_DetailCustomers].[CreatedByDob] AS [CreatedByDob], 
+    [V_DetailCustomers].[CreatedByIsQuitJob] AS [CreatedByIsQuitJob], 
+    [V_DetailCustomers].[CreatedByDateCreate] AS [CreatedByDateCreate], 
+    [V_DetailCustomers].[CreatedByTeam] AS [CreatedByTeam], 
+    [V_DetailCustomers].[AssignedSupportID] AS [AssignedSupportID], 
+    [V_DetailCustomers].[AssignedSupportUsername] AS [AssignedSupportUsername], 
+    [V_DetailCustomers].[AssignedSupportFirstname] AS [AssignedSupportFirstname], 
+    [V_DetailCustomers].[AssignedSupportLastname] AS [AssignedSupportLastname], 
+    [V_DetailCustomers].[AssignedSupportAvatar] AS [AssignedSupportAvatar], 
+    [V_DetailCustomers].[AssignedSupportAddress] AS [AssignedSupportAddress], 
+    [V_DetailCustomers].[AssignedSupportDistrict] AS [AssignedSupportDistrict], 
+    [V_DetailCustomers].[AssignedSupportDob] AS [AssignedSupportDob], 
+    [V_DetailCustomers].[AssignedSupportIsQuitJob] AS [AssignedSupportIsQuitJob], 
+    [V_DetailCustomers].[AssignedSupportDateCreate] AS [AssignedSupportDateCreate], 
+    [V_DetailCustomers].[AssignedSupportTeam] AS [AssignedSupportTeam], 
+    [V_DetailCustomers].[AccountantTeamID] AS [AccountantTeamID], 
+    [V_DetailCustomers].[AccountantTeamName] AS [AccountantTeamName], 
+    [V_DetailCustomers].[AccountantTeamLeader] AS [AccountantTeamLeader], 
+    [V_DetailCustomers].[DepartmentCode] AS [DepartmentCode], 
+    [V_DetailCustomers].[DepartmentName] AS [DepartmentName], 
+    [V_DetailCustomers].[DepartmentDisplayOrder] AS [DepartmentDisplayOrder], 
+    [V_DetailCustomers].[DepartmentClosed] AS [DepartmentClosed]
+    FROM [dbo].[V_DetailCustomers] AS [V_DetailCustomers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_DetailDocumentTypes" EntityType="Self.V_DetailDocumentTypes" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_DetailDocumentTypes].[DocumentTypeID] AS [DocumentTypeID], 
+    [V_DetailDocumentTypes].[DocumentTypeName] AS [DocumentTypeName], 
+    [V_DetailDocumentTypes].[DocumentReceivingMechanism] AS [DocumentReceivingMechanism], 
+    [V_DetailDocumentTypes].[AvgAmount] AS [AvgAmount], 
+    [V_DetailDocumentTypes].[RegisteredAmount] AS [RegisteredAmount], 
+    [V_DetailDocumentTypes].[CurrentTotalAmount] AS [CurrentTotalAmount], 
+    [V_DetailDocumentTypes].[Code] AS [Code], 
+    [V_DetailDocumentTypes].[Name] AS [Name], 
+    [V_DetailDocumentTypes].[ShortName] AS [ShortName], 
+    [V_DetailDocumentTypes].[Address] AS [Address], 
+    [V_DetailDocumentTypes].[LogoS3Key] AS [LogoS3Key], 
+    [V_DetailDocumentTypes].[FilterLocation] AS [FilterLocation], 
+    [V_DetailDocumentTypes].[GetDocsDate] AS [GetDocsDate], 
+    [V_DetailDocumentTypes].[DateCreate] AS [DateCreate], 
+    [V_DetailDocumentTypes].[Suspended] AS [Suspended], 
+    [V_DetailDocumentTypes].[SuspendedTo] AS [SuspendedTo], 
+    [V_DetailDocumentTypes].[Dissolved] AS [Dissolved], 
+    [V_DetailDocumentTypes].[DissolvedDate] AS [DissolvedDate], 
+    [V_DetailDocumentTypes].[MainAccountant] AS [MainAccountant], 
+    [V_DetailDocumentTypes].[CreatedBy] AS [CreatedBy], 
+    [V_DetailDocumentTypes].[AssignedToCustomerSupport] AS [AssignedToCustomerSupport], 
+    [V_DetailDocumentTypes].[ResponsibleAccountantTeam] AS [ResponsibleAccountantTeam], 
+    [V_DetailDocumentTypes].[LKACSoft_DepartmentCode] AS [LKACSoft_DepartmentCode], 
+    [V_DetailDocumentTypes].[ContractExpiry] AS [ContractExpiry], 
+    [V_DetailDocumentTypes].[ContractSignedDate] AS [ContractSignedDate], 
+    [V_DetailDocumentTypes].[ArchivedAmount] AS [ArchivedAmount], 
+    [V_DetailDocumentTypes].[LendAmount] AS [LendAmount], 
+    [V_DetailDocumentTypes].[LostAmount] AS [LostAmount]
+    FROM [dbo].[V_DetailDocumentTypes] AS [V_DetailDocumentTypes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_DetailExecutions" EntityType="Self.V_DetailExecutions" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_DetailExecutions].[ExecutionID] AS [ExecutionID], 
+    [V_DetailExecutions].[ExecutionName] AS [ExecutionName], 
+    [V_DetailExecutions].[CreatedByForExecution] AS [CreatedByForExecution], 
+    [V_DetailExecutions].[DateCreated] AS [DateCreated], 
+    [V_DetailExecutions].[IsPeriodic] AS [IsPeriodic], 
+    [V_DetailExecutions].[FieldName] AS [FieldName], 
+    [V_DetailExecutions].[FieldValue] AS [FieldValue], 
+    [V_DetailExecutions].[CreatedByID] AS [CreatedByID], 
+    [V_DetailExecutions].[CreatedByUsername] AS [CreatedByUsername], 
+    [V_DetailExecutions].[CreatedByFirstname] AS [CreatedByFirstname], 
+    [V_DetailExecutions].[CreatedByLastname] AS [CreatedByLastname], 
+    [V_DetailExecutions].[CreatedByAvatar] AS [CreatedByAvatar], 
+    [V_DetailExecutions].[CreatedByAddress] AS [CreatedByAddress], 
+    [V_DetailExecutions].[CreatedByDistrict] AS [CreatedByDistrict], 
+    [V_DetailExecutions].[CreatedByDob] AS [CreatedByDob], 
+    [V_DetailExecutions].[CreatedByIsQuitJob] AS [CreatedByIsQuitJob], 
+    [V_DetailExecutions].[CreatedByDateCreate] AS [CreatedByDateCreate], 
+    [V_DetailExecutions].[CreatedByTeam] AS [CreatedByTeam], 
+    [V_DetailExecutions].[ProcessSchemaStatusID] AS [ProcessSchemaStatusID], 
+    [V_DetailExecutions].[OrderIndex] AS [OrderIndex], 
+    [V_DetailExecutions].[processSchemaStatusCreatedAt] AS [processSchemaStatusCreatedAt], 
+    [V_DetailExecutions].[ProcessStatusID] AS [ProcessStatusID], 
+    [V_DetailExecutions].[StatusName] AS [StatusName], 
+    [V_DetailExecutions].[DesignatedColor] AS [DesignatedColor], 
+    [V_DetailExecutions].[ProcessSchemaID] AS [ProcessSchemaID], 
+    [V_DetailExecutions].[ProcessSchemaName] AS [ProcessSchemaName], 
+    [V_DetailExecutions].[ProcessSchemaDescription] AS [ProcessSchemaDescription], 
+    [V_DetailExecutions].[CreatedAt] AS [CreatedAt], 
+    [V_DetailExecutions].[UpdatedAt] AS [UpdatedAt], 
+    [V_DetailExecutions].[Code] AS [Code], 
+    [V_DetailExecutions].[Name] AS [Name], 
+    [V_DetailExecutions].[ShortName] AS [ShortName], 
+    [V_DetailExecutions].[Address] AS [Address], 
+    [V_DetailExecutions].[LogoS3Key] AS [LogoS3Key], 
+    [V_DetailExecutions].[FilterLocation] AS [FilterLocation], 
+    [V_DetailExecutions].[GetDocsDate] AS [GetDocsDate], 
+    [V_DetailExecutions].[DateCreate] AS [DateCreate], 
+    [V_DetailExecutions].[Suspended] AS [Suspended], 
+    [V_DetailExecutions].[SuspendedTo] AS [SuspendedTo], 
+    [V_DetailExecutions].[Dissolved] AS [Dissolved], 
+    [V_DetailExecutions].[DissolvedDate] AS [DissolvedDate], 
+    [V_DetailExecutions].[MainAccountant] AS [MainAccountant], 
+    [V_DetailExecutions].[CreatedBy] AS [CreatedBy], 
+    [V_DetailExecutions].[AssignedToCustomerSupport] AS [AssignedToCustomerSupport], 
+    [V_DetailExecutions].[ResponsibleAccountantTeam] AS [ResponsibleAccountantTeam], 
+    [V_DetailExecutions].[LKACSoft_DepartmentCode] AS [LKACSoft_DepartmentCode], 
+    [V_DetailExecutions].[ContractExpiry] AS [ContractExpiry], 
+    [V_DetailExecutions].[ContractSignedDate] AS [ContractSignedDate], 
+    [V_DetailExecutions].[TaskCount] AS [TaskCount]
+    FROM [dbo].[V_DetailExecutions] AS [V_DetailExecutions]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_DetailJobTaskFiles" EntityType="Self.V_DetailJobTaskFiles" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_DetailJobTaskFiles].[JobTaskFileCode] AS [JobTaskFileCode], 
+    [V_DetailJobTaskFiles].[FileName] AS [FileName], 
+    [V_DetailJobTaskFiles].[FileType] AS [FileType], 
+    [V_DetailJobTaskFiles].[CreatedAt] AS [CreatedAt], 
+    [V_DetailJobTaskFiles].[AccountantReceivedAt] AS [AccountantReceivedAt], 
+    [V_DetailJobTaskFiles].[ReadyToBeReturnedAt] AS [ReadyToBeReturnedAt], 
+    [V_DetailJobTaskFiles].[PhysicalLocation] AS [PhysicalLocation], 
+    [V_DetailJobTaskFiles].[ArchivedDate] AS [ArchivedDate], 
+    [V_DetailJobTaskFiles].[ReturnedDate] AS [ReturnedDate], 
+    [V_DetailJobTaskFiles].[AccountingStatusID] AS [AccountingStatusID], 
+    [V_DetailJobTaskFiles].[AccountingStatusName] AS [AccountingStatusName], 
+    [V_DetailJobTaskFiles].[ArchivingStatusID] AS [ArchivingStatusID], 
+    [V_DetailJobTaskFiles].[ArchivingStatusName] AS [ArchivingStatusName], 
+    [V_DetailJobTaskFiles].[accountantID] AS [accountantID], 
+    [V_DetailJobTaskFiles].[accountantUsername] AS [accountantUsername], 
+    [V_DetailJobTaskFiles].[accountantFirstname] AS [accountantFirstname], 
+    [V_DetailJobTaskFiles].[accountantLastname] AS [accountantLastname], 
+    [V_DetailJobTaskFiles].[accountantAvatar] AS [accountantAvatar], 
+    [V_DetailJobTaskFiles].[accountantAddress] AS [accountantAddress], 
+    [V_DetailJobTaskFiles].[accountantDistrict] AS [accountantDistrict], 
+    [V_DetailJobTaskFiles].[accountantDob] AS [accountantDob], 
+    [V_DetailJobTaskFiles].[accountantIsQuitJob] AS [accountantIsQuitJob], 
+    [V_DetailJobTaskFiles].[accountantDateCreate] AS [accountantDateCreate], 
+    [V_DetailJobTaskFiles].[accountantTeam] AS [accountantTeam], 
+    [V_DetailJobTaskFiles].[CreatedByID] AS [CreatedByID], 
+    [V_DetailJobTaskFiles].[CreatedByUsername] AS [CreatedByUsername], 
+    [V_DetailJobTaskFiles].[CreatedByFirstname] AS [CreatedByFirstname], 
+    [V_DetailJobTaskFiles].[CreatedByLastname] AS [CreatedByLastname], 
+    [V_DetailJobTaskFiles].[CreatedByAvatar] AS [CreatedByAvatar], 
+    [V_DetailJobTaskFiles].[CreatedByAddress] AS [CreatedByAddress], 
+    [V_DetailJobTaskFiles].[CreatedByDistrict] AS [CreatedByDistrict], 
+    [V_DetailJobTaskFiles].[CreatedByDob] AS [CreatedByDob], 
+    [V_DetailJobTaskFiles].[CreatedByIsQuitJob] AS [CreatedByIsQuitJob], 
+    [V_DetailJobTaskFiles].[CreatedByDateCreate] AS [CreatedByDateCreate], 
+    [V_DetailJobTaskFiles].[CreatedByTeam] AS [CreatedByTeam], 
+    [V_DetailJobTaskFiles].[ExecutionID] AS [ExecutionID], 
+    [V_DetailJobTaskFiles].[ExecutionName] AS [ExecutionName], 
+    [V_DetailJobTaskFiles].[CreatedByForExecution] AS [CreatedByForExecution], 
+    [V_DetailJobTaskFiles].[DateCreated] AS [DateCreated], 
+    [V_DetailJobTaskFiles].[IsPeriodic] AS [IsPeriodic], 
+    [V_DetailJobTaskFiles].[DocumentTypeID] AS [DocumentTypeID], 
+    [V_DetailJobTaskFiles].[DocumentTypeName] AS [DocumentTypeName], 
+    [V_DetailJobTaskFiles].[DocumentReceivingMechanism] AS [DocumentReceivingMechanism], 
+    [V_DetailJobTaskFiles].[AvgAmount] AS [AvgAmount], 
+    [V_DetailJobTaskFiles].[RegisteredAmount] AS [RegisteredAmount], 
+    [V_DetailJobTaskFiles].[Code] AS [Code], 
+    [V_DetailJobTaskFiles].[Name] AS [Name], 
+    [V_DetailJobTaskFiles].[ShortName] AS [ShortName], 
+    [V_DetailJobTaskFiles].[Address] AS [Address], 
+    [V_DetailJobTaskFiles].[LogoS3Key] AS [LogoS3Key], 
+    [V_DetailJobTaskFiles].[FilterLocation] AS [FilterLocation], 
+    [V_DetailJobTaskFiles].[GetDocsDate] AS [GetDocsDate], 
+    [V_DetailJobTaskFiles].[DateCreate] AS [DateCreate], 
+    [V_DetailJobTaskFiles].[Suspended] AS [Suspended], 
+    [V_DetailJobTaskFiles].[SuspendedTo] AS [SuspendedTo], 
+    [V_DetailJobTaskFiles].[Dissolved] AS [Dissolved], 
+    [V_DetailJobTaskFiles].[DissolvedDate] AS [DissolvedDate], 
+    [V_DetailJobTaskFiles].[MainAccountant] AS [MainAccountant], 
+    [V_DetailJobTaskFiles].[CreatedBy] AS [CreatedBy], 
+    [V_DetailJobTaskFiles].[AssignedToCustomerSupport] AS [AssignedToCustomerSupport], 
+    [V_DetailJobTaskFiles].[ResponsibleAccountantTeam] AS [ResponsibleAccountantTeam], 
+    [V_DetailJobTaskFiles].[LKACSoft_DepartmentCode] AS [LKACSoft_DepartmentCode], 
+    [V_DetailJobTaskFiles].[ContractExpiry] AS [ContractExpiry], 
+    [V_DetailJobTaskFiles].[ContractSignedDate] AS [ContractSignedDate]
+    FROM [dbo].[V_DetailJobTaskFiles] AS [V_DetailJobTaskFiles]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_DetailProcessSchemaStatuses" EntityType="Self.V_DetailProcessSchemaStatuses" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_DetailProcessSchemaStatuses].[ProcessSchemaStatusID] AS [ProcessSchemaStatusID], 
+    [V_DetailProcessSchemaStatuses].[ProcessSchema] AS [ProcessSchema], 
+    [V_DetailProcessSchemaStatuses].[ProcessStatus] AS [ProcessStatus], 
+    [V_DetailProcessSchemaStatuses].[OrderIndex] AS [OrderIndex], 
+    [V_DetailProcessSchemaStatuses].[CreatedAt] AS [CreatedAt], 
+    [V_DetailProcessSchemaStatuses].[ProcessSchemaID] AS [ProcessSchemaID], 
+    [V_DetailProcessSchemaStatuses].[ProcessSchemaName] AS [ProcessSchemaName], 
+    [V_DetailProcessSchemaStatuses].[ProcessSchemaDescription] AS [ProcessSchemaDescription], 
+    [V_DetailProcessSchemaStatuses].[ProcessSchemaCreatedAt] AS [ProcessSchemaCreatedAt], 
+    [V_DetailProcessSchemaStatuses].[ProcessSchemaUpdatedAt] AS [ProcessSchemaUpdatedAt], 
+    [V_DetailProcessSchemaStatuses].[ProcessStatusID] AS [ProcessStatusID], 
+    [V_DetailProcessSchemaStatuses].[StatusName] AS [StatusName], 
+    [V_DetailProcessSchemaStatuses].[DesignatedColor] AS [DesignatedColor]
+    FROM [dbo].[V_DetailProcessSchemaStatuses] AS [V_DetailProcessSchemaStatuses]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_DetailTasks" EntityType="Self.V_DetailTasks" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_DetailTasks].[TaskID] AS [TaskID], 
+    [V_DetailTasks].[DateAssigned] AS [DateAssigned], 
+    [V_DetailTasks].[TaskDeadline] AS [TaskDeadline], 
+    [V_DetailTasks].[AssignedTo] AS [AssignedTo], 
+    [V_DetailTasks].[TaskTitle] AS [TaskTitle], 
+    [V_DetailTasks].[TaskDetail] AS [TaskDetail], 
+    [V_DetailTasks].[TaskStatus] AS [TaskStatus], 
+    [V_DetailTasks].[DateAccepted] AS [DateAccepted], 
+    [V_DetailTasks].[DateCompleted] AS [DateCompleted], 
+    [V_DetailTasks].[ReviewedBy] AS [ReviewedBy], 
+    [V_DetailTasks].[ReviewNote] AS [ReviewNote], 
+    [V_DetailTasks].[DateReview] AS [DateReview], 
+    [V_DetailTasks].[IsRetried] AS [IsRetried], 
+    [V_DetailTasks].[RelatedToExecution] AS [RelatedToExecution], 
+    [V_DetailTasks].[TaskType] AS [TaskType], 
+    [V_DetailTasks].[DesignatedNumberOfDocument] AS [DesignatedNumberOfDocument], 
+    [V_DetailTasks].[NumberOfCompletedDocument] AS [NumberOfCompletedDocument], 
+    [V_DetailTasks].[Priority] AS [Priority], 
+    [V_DetailTasks].[TaskCreatedAt] AS [TaskCreatedAt], 
+    [V_DetailTasks].[AssignedUserID] AS [AssignedUserID], 
+    [V_DetailTasks].[AssignedUserUsername] AS [AssignedUserUsername], 
+    [V_DetailTasks].[AssignedUserFirstname] AS [AssignedUserFirstname], 
+    [V_DetailTasks].[AssignedUserLastname] AS [AssignedUserLastname], 
+    [V_DetailTasks].[AssignedUserAvatar] AS [AssignedUserAvatar], 
+    [V_DetailTasks].[AssignedUserAddress] AS [AssignedUserAddress], 
+    [V_DetailTasks].[AssignedUserDistrict] AS [AssignedUserDistrict], 
+    [V_DetailTasks].[AssignedUserDob] AS [AssignedUserDob], 
+    [V_DetailTasks].[AssignedUserIsQuitJob] AS [AssignedUserIsQuitJob], 
+    [V_DetailTasks].[AssignedUserDateCreate] AS [AssignedUserDateCreate], 
+    [V_DetailTasks].[AssignedUserTeam] AS [AssignedUserTeam], 
+    [V_DetailTasks].[ReviewedUserID] AS [ReviewedUserID], 
+    [V_DetailTasks].[ReviewedUserUsername] AS [ReviewedUserUsername], 
+    [V_DetailTasks].[ReviewedUserFirstname] AS [ReviewedUserFirstname], 
+    [V_DetailTasks].[ReviewedUserLastname] AS [ReviewedUserLastname], 
+    [V_DetailTasks].[ReviewedUserAvatar] AS [ReviewedUserAvatar], 
+    [V_DetailTasks].[ReviewedUserAddress] AS [ReviewedUserAddress], 
+    [V_DetailTasks].[ReviewedUserDistrict] AS [ReviewedUserDistrict], 
+    [V_DetailTasks].[ReviewedUserDob] AS [ReviewedUserDob], 
+    [V_DetailTasks].[ReviewedUserIsQuitJob] AS [ReviewedUserIsQuitJob], 
+    [V_DetailTasks].[ReviewedUserDateCreate] AS [ReviewedUserDateCreate], 
+    [V_DetailTasks].[ReviewedUserTeam] AS [ReviewedUserTeam], 
+    [V_DetailTasks].[ExecutionID] AS [ExecutionID], 
+    [V_DetailTasks].[ExecutionName] AS [ExecutionName], 
+    [V_DetailTasks].[CreatedBy] AS [CreatedBy], 
+    [V_DetailTasks].[DateCreated] AS [DateCreated], 
+    [V_DetailTasks].[IsPeriodic] AS [IsPeriodic], 
+    [V_DetailTasks].[ProcessSchemaStatus] AS [ProcessSchemaStatus], 
+    [V_DetailTasks].[ProcessSchemaID] AS [ProcessSchemaID], 
+    [V_DetailTasks].[RelatedToCustomer] AS [RelatedToCustomer], 
+    [V_DetailTasks].[TaskStatusID] AS [TaskStatusID], 
+    [V_DetailTasks].[TaskStatusName] AS [TaskStatusName], 
+    [V_DetailTasks].[TaskStatusDesignatedColor] AS [TaskStatusDesignatedColor], 
+    [V_DetailTasks].[PriorityID] AS [PriorityID], 
+    [V_DetailTasks].[PriorityName] AS [PriorityName], 
+    [V_DetailTasks].[PriorityDesignatedColor] AS [PriorityDesignatedColor], 
+    [V_DetailTasks].[TaskTypeID] AS [TaskTypeID], 
+    [V_DetailTasks].[TaskTypeName] AS [TaskTypeName], 
+    [V_DetailTasks].[Description] AS [Description], 
+    [V_DetailTasks].[TaskTypeDesignatedColor] AS [TaskTypeDesignatedColor]
+    FROM [dbo].[V_DetailTasks] AS [V_DetailTasks]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_DetailUsers" EntityType="Self.V_DetailUsers" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_DetailUsers].[UserID] AS [UserID], 
+    [V_DetailUsers].[Username] AS [Username], 
+    [V_DetailUsers].[Firstname] AS [Firstname], 
+    [V_DetailUsers].[LastName] AS [LastName], 
+    [V_DetailUsers].[Avatar] AS [Avatar], 
+    [V_DetailUsers].[Address] AS [Address], 
+    [V_DetailUsers].[District] AS [District], 
+    [V_DetailUsers].[DateOfBirth] AS [DateOfBirth], 
+    [V_DetailUsers].[IsQuitJob] AS [IsQuitJob], 
+    [V_DetailUsers].[UserDateCreated] AS [UserDateCreated], 
+    [V_DetailUsers].[Email] AS [Email], 
+    [V_DetailUsers].[TeamID] AS [TeamID], 
+    [V_DetailUsers].[TeamName] AS [TeamName], 
+    [V_DetailUsers].[TeamLeader] AS [TeamLeader], 
+    [V_DetailUsers].[InProgressTasksCount] AS [InProgressTasksCount], 
+    [V_DetailUsers].[DoneTasksCount] AS [DoneTasksCount]
+    FROM [dbo].[V_DetailUsers] AS [V_DetailUsers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_DetailUsersKPI" EntityType="Self.V_DetailUsersKPI" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_DetailUsersKPI].[UserID] AS [UserID], 
+    [V_DetailUsersKPI].[InComplete] AS [InComplete], 
+    [V_DetailUsersKPI].[DoneOnTime] AS [DoneOnTime], 
+    [V_DetailUsersKPI].[DoneBeforeDL] AS [DoneBeforeDL], 
+    [V_DetailUsersKPI].[Late] AS [Late]
+    FROM [dbo].[V_DetailUsersKPI] AS [V_DetailUsersKPI]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_DocumentTypeDtos" EntityType="Self.V_DocumentTypeDtos" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_DocumentTypeDtos].[DocumentTypeID] AS [DocumentTypeID], 
+    [V_DocumentTypeDtos].[DocumentTypeName] AS [DocumentTypeName], 
+    [V_DocumentTypeDtos].[ArchivedAmount] AS [ArchivedAmount], 
+    [V_DocumentTypeDtos].[LendAmount] AS [LendAmount], 
+    [V_DocumentTypeDtos].[LostAmount] AS [LostAmount]
+    FROM [dbo].[V_DocumentTypeDtos] AS [V_DocumentTypeDtos]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_ab6e43_lkacsoftdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="V_DetailCustomers">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ShortName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LogoS3Key" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FilterLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="GetDocsDate" Type="Int32" />
+          <Property Name="DateCreate" Type="DateTime" Precision="0" />
+          <Property Name="Suspended" Type="Boolean" />
+          <Property Name="SuspendedTo" Type="DateTime" Precision="0" />
+          <Property Name="Dissolved" Type="Boolean" />
+          <Property Name="DissolvedDate" Type="DateTime" Precision="0" />
+          <Property Name="MainAccountant" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AssignedToCustomerSupport" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ResponsibleAccountantTeam" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LKACSoft_DepartmentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ContractExpiry" Type="DateTime" Precision="0" />
+          <Property Name="ContractSignedDate" Type="DateTime" Precision="0" />
+          <Property Name="MainAccountantID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MainAccountantUsername" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MainAccountantFirstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MainAccountantLastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MainAccountantAvatar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MainAccountantAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MainAccountantDistrict" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MainAccountantDob" Type="DateTime" Precision="0" />
+          <Property Name="MainAccountantIsQuitJob" Type="Boolean" />
+          <Property Name="MainAccountantDateCreate" Type="DateTime" Precision="0" />
+          <Property Name="MainAccountantTeam" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByUsername" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByFirstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByLastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByAvatar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByDistrict" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByDob" Type="DateTime" Precision="0" />
+          <Property Name="CreatedByIsQuitJob" Type="Boolean" />
+          <Property Name="CreatedByDateCreate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedByTeam" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AssignedSupportID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AssignedSupportUsername" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedSupportFirstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedSupportLastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedSupportAvatar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedSupportAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedSupportDistrict" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedSupportDob" Type="DateTime" Precision="0" />
+          <Property Name="AssignedSupportIsQuitJob" Type="Boolean" />
+          <Property Name="AssignedSupportDateCreate" Type="DateTime" Precision="0" />
+          <Property Name="AssignedSupportTeam" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AccountantTeamID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AccountantTeamName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AccountantTeamLeader" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentDisplayOrder" Type="Int32" />
+          <Property Name="DepartmentClosed" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="V_DetailDocumentTypes">
+          <Key>
+            <PropertyRef Name="DocumentTypeID" />
+          </Key>
+          <Property Name="DocumentTypeID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocumentTypeName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DocumentReceivingMechanism" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AvgAmount" Type="Int32" />
+          <Property Name="RegisteredAmount" Type="Int32" />
+          <Property Name="CurrentTotalAmount" Type="Int32" />
+          <Property Name="Code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ShortName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LogoS3Key" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FilterLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="GetDocsDate" Type="Int32" />
+          <Property Name="DateCreate" Type="DateTime" Precision="0" />
+          <Property Name="Suspended" Type="Boolean" />
+          <Property Name="SuspendedTo" Type="DateTime" Precision="0" />
+          <Property Name="Dissolved" Type="Boolean" />
+          <Property Name="DissolvedDate" Type="DateTime" Precision="0" />
+          <Property Name="MainAccountant" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AssignedToCustomerSupport" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ResponsibleAccountantTeam" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LKACSoft_DepartmentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ContractExpiry" Type="DateTime" Precision="0" />
+          <Property Name="ContractSignedDate" Type="DateTime" Precision="0" />
+          <Property Name="ArchivedAmount" Type="Int32" />
+          <Property Name="LendAmount" Type="Int32" />
+          <Property Name="LostAmount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="V_DetailTasks">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateAssigned" Type="DateTime" Precision="0" />
+          <Property Name="TaskDeadline" Type="DateTime" Precision="0" />
+          <Property Name="AssignedTo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TaskTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TaskDetail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TaskStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DateAccepted" Type="DateTime" Precision="0" />
+          <Property Name="DateCompleted" Type="DateTime" Precision="0" />
+          <Property Name="ReviewedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ReviewNote" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="DateReview" Type="DateTime" Precision="0" />
+          <Property Name="IsRetried" Type="Boolean" />
+          <Property Name="RelatedToExecution" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TaskType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DesignatedNumberOfDocument" Type="Int32" />
+          <Property Name="NumberOfCompletedDocument" Type="Int32" />
+          <Property Name="Priority" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TaskCreatedAt" Type="DateTime" Precision="0" />
+          <Property Name="AssignedUserID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AssignedUserUsername" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedUserFirstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedUserLastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedUserAvatar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedUserAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedUserDistrict" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedUserDob" Type="DateTime" Precision="0" />
+          <Property Name="AssignedUserIsQuitJob" Type="Boolean" />
+          <Property Name="AssignedUserDateCreate" Type="DateTime" Precision="0" />
+          <Property Name="AssignedUserTeam" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ReviewedUserID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ReviewedUserUsername" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewedUserFirstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewedUserLastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewedUserAvatar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewedUserAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewedUserDistrict" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewedUserDob" Type="DateTime" Precision="0" />
+          <Property Name="ReviewedUserIsQuitJob" Type="Boolean" />
+          <Property Name="ReviewedUserDateCreate" Type="DateTime" Precision="0" />
+          <Property Name="ReviewedUserTeam" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ExecutionID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ExecutionName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="0" />
+          <Property Name="IsPeriodic" Type="Boolean" />
+          <Property Name="ProcessSchemaStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessSchemaID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RelatedToCustomer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TaskStatusID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TaskStatusName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TaskStatusDesignatedColor" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="PriorityID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PriorityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PriorityDesignatedColor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TaskTypeID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TaskTypeName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="TaskTypeDesignatedColor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="db_ab6e43_lkacsoftdbEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="V_DetailCustomers" EntityType="Self.V_DetailCustomers" />
+          <EntitySet Name="V_DetailDocumentTypes" EntityType="Self.V_DetailDocumentTypes" />
+          <EntitySet Name="V_DetailTasks" EntityType="Self.V_DetailTasks" />
+          <EntitySet Name="V_DetailUsers" EntityType="db_ab6e43_lkacsoftdbModel.V_DetailUsers" />
+          <EntitySet Name="V_DocumentTypeDtos" EntityType="db_ab6e43_lkacsoftdbModel.V_DocumentTypeDtos" />
+          <EntitySet Name="V_DetailUsersKPI" EntityType="db_ab6e43_lkacsoftdbModel.V_DetailUsersKPI" />
+          <EntitySet Name="V_DetailJobTaskFiles" EntityType="db_ab6e43_lkacsoftdbModel.V_DetailJobTaskFiles" />
+          <EntitySet Name="V_DetailProcessSchemaStatuses" EntityType="db_ab6e43_lkacsoftdbModel.V_DetailProcessSchemaStatuses" />
+          <EntitySet Name="V_DetailExecutions" EntityType="db_ab6e43_lkacsoftdbModel.V_DetailExecutions" />
+        </EntityContainer>
+        <EntityType Name="V_DetailUsers">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Firstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="IsQuitJob" Type="Boolean" />
+          <Property Name="UserDateCreated" Type="DateTime" Precision="0" />
+          <Property Name="TeamID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TeamName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TeamLeader" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="InProgressTasksCount" Type="Int32" />
+          <Property Name="DoneTasksCount" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_DocumentTypeDtos">
+          <Key>
+            <PropertyRef Name="DocumentTypeID" />
+          </Key>
+          <Property Name="DocumentTypeID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentTypeName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ArchivedAmount" Type="Int32" />
+          <Property Name="LendAmount" Type="Int32" />
+          <Property Name="LostAmount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="V_DetailUsersKPI">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="InComplete" Type="Int32" />
+          <Property Name="DoneOnTime" Type="Int32" />
+          <Property Name="DoneBeforeDL" Type="Int32" />
+          <Property Name="Late" Type="Int32" />
+        </EntityType>
+        <EntityType Name="V_DetailJobTaskFiles">
+          <Key>
+            <PropertyRef Name="JobTaskFileCode" />
+          </Key>
+          <Property Name="JobTaskFileCode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FileType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="0" />
+          <Property Name="AccountantReceivedAt" Type="DateTime" Precision="0" />
+          <Property Name="ReadyToBeReturnedAt" Type="DateTime" Precision="0" />
+          <Property Name="PhysicalLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ArchivedDate" Type="DateTime" Precision="0" />
+          <Property Name="ReturnedDate" Type="DateTime" Precision="0" />
+          <Property Name="AccountingStatusID" Type="Int32" />
+          <Property Name="AccountingStatusName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ArchivingStatusID" Type="Int32" />
+          <Property Name="ArchivingStatusName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="accountantID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="accountantUsername" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="accountantFirstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="accountantLastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="accountantAvatar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="accountantAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="accountantDistrict" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="accountantDob" Type="DateTime" Precision="0" />
+          <Property Name="accountantIsQuitJob" Type="Boolean" />
+          <Property Name="accountantDateCreate" Type="DateTime" Precision="0" />
+          <Property Name="accountantTeam" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByUsername" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByFirstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByLastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByAvatar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByDistrict" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByDob" Type="DateTime" Precision="0" />
+          <Property Name="CreatedByIsQuitJob" Type="Boolean" />
+          <Property Name="CreatedByDateCreate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedByTeam" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ExecutionID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ExecutionName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByForExecution" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="0" />
+          <Property Name="IsPeriodic" Type="Boolean" />
+          <Property Name="DocumentTypeID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentTypeName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DocumentReceivingMechanism" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AvgAmount" Type="Int32" />
+          <Property Name="RegisteredAmount" Type="Int32" />
+          <Property Name="Code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ShortName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LogoS3Key" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FilterLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="GetDocsDate" Type="Int32" />
+          <Property Name="DateCreate" Type="DateTime" Precision="0" />
+          <Property Name="Suspended" Type="Boolean" />
+          <Property Name="SuspendedTo" Type="DateTime" Precision="0" />
+          <Property Name="Dissolved" Type="Boolean" />
+          <Property Name="DissolvedDate" Type="DateTime" Precision="0" />
+          <Property Name="MainAccountant" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AssignedToCustomerSupport" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ResponsibleAccountantTeam" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LKACSoft_DepartmentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ContractExpiry" Type="DateTime" Precision="0" />
+          <Property Name="ContractSignedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="V_DetailProcessSchemaStatuses">
+          <Key>
+            <PropertyRef Name="ProcessSchemaStatusID" />
+          </Key>
+          <Property Name="ProcessSchemaStatusID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessSchema" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OrderIndex" Type="Int32" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="0" />
+          <Property Name="ProcessSchemaID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessSchemaName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessSchemaDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessSchemaCreatedAt" Type="DateTime" Precision="0" />
+          <Property Name="ProcessSchemaUpdatedAt" Type="DateTime" Precision="0" />
+          <Property Name="ProcessStatusID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="StatusName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DesignatedColor" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="V_DetailExecutions">
+          <Key>
+            <PropertyRef Name="ExecutionID" />
+          </Key>
+          <Property Name="ExecutionID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ExecutionName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByForExecution" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="0" />
+          <Property Name="IsPeriodic" Type="Boolean" />
+          <Property Name="FieldName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FieldValue" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByUsername" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByFirstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByLastname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByAvatar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByDistrict" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedByDob" Type="DateTime" Precision="0" />
+          <Property Name="CreatedByIsQuitJob" Type="Boolean" />
+          <Property Name="CreatedByDateCreate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedByTeam" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessSchemaStatusID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OrderIndex" Type="Int32" />
+          <Property Name="processSchemaStatusCreatedAt" Type="DateTime" Precision="0" />
+          <Property Name="ProcessStatusID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="StatusName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DesignatedColor" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessSchemaID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessSchemaName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessSchemaDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="0" />
+          <Property Name="Code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ShortName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LogoS3Key" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FilterLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="GetDocsDate" Type="Int32" />
+          <Property Name="DateCreate" Type="DateTime" Precision="0" />
+          <Property Name="Suspended" Type="Boolean" />
+          <Property Name="SuspendedTo" Type="DateTime" Precision="0" />
+          <Property Name="Dissolved" Type="Boolean" />
+          <Property Name="DissolvedDate" Type="DateTime" Precision="0" />
+          <Property Name="MainAccountant" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AssignedToCustomerSupport" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ResponsibleAccountantTeam" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LKACSoft_DepartmentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ContractExpiry" Type="DateTime" Precision="0" />
+          <Property Name="ContractSignedDate" Type="DateTime" Precision="0" />
+          <Property Name="TaskCount" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_ab6e43_lkacsoftdbModelStoreContainer" CdmEntityContainer="db_ab6e43_lkacsoftdbEntities4">
+          <EntitySetMapping Name="V_DetailCustomers">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel.V_DetailCustomers">
+              <MappingFragment StoreEntitySet="V_DetailCustomers">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="LogoS3Key" ColumnName="LogoS3Key" />
+                <ScalarProperty Name="FilterLocation" ColumnName="FilterLocation" />
+                <ScalarProperty Name="GetDocsDate" ColumnName="GetDocsDate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="Suspended" ColumnName="Suspended" />
+                <ScalarProperty Name="SuspendedTo" ColumnName="SuspendedTo" />
+                <ScalarProperty Name="Dissolved" ColumnName="Dissolved" />
+                <ScalarProperty Name="DissolvedDate" ColumnName="DissolvedDate" />
+                <ScalarProperty Name="MainAccountant" ColumnName="MainAccountant" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="AssignedToCustomerSupport" ColumnName="AssignedToCustomerSupport" />
+                <ScalarProperty Name="ResponsibleAccountantTeam" ColumnName="ResponsibleAccountantTeam" />
+                <ScalarProperty Name="LKACSoft_DepartmentCode" ColumnName="LKACSoft_DepartmentCode" />
+                <ScalarProperty Name="ContractExpiry" ColumnName="ContractExpiry" />
+                <ScalarProperty Name="ContractSignedDate" ColumnName="ContractSignedDate" />
+                <ScalarProperty Name="MainAccountantID" ColumnName="MainAccountantID" />
+                <ScalarProperty Name="MainAccountantUsername" ColumnName="MainAccountantUsername" />
+                <ScalarProperty Name="MainAccountantFirstname" ColumnName="MainAccountantFirstname" />
+                <ScalarProperty Name="MainAccountantLastname" ColumnName="MainAccountantLastname" />
+                <ScalarProperty Name="MainAccountantAvatar" ColumnName="MainAccountantAvatar" />
+                <ScalarProperty Name="MainAccountantAddress" ColumnName="MainAccountantAddress" />
+                <ScalarProperty Name="MainAccountantDistrict" ColumnName="MainAccountantDistrict" />
+                <ScalarProperty Name="MainAccountantDob" ColumnName="MainAccountantDob" />
+                <ScalarProperty Name="MainAccountantIsQuitJob" ColumnName="MainAccountantIsQuitJob" />
+                <ScalarProperty Name="MainAccountantDateCreate" ColumnName="MainAccountantDateCreate" />
+                <ScalarProperty Name="MainAccountantTeam" ColumnName="MainAccountantTeam" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="CreatedByUsername" ColumnName="CreatedByUsername" />
+                <ScalarProperty Name="CreatedByFirstname" ColumnName="CreatedByFirstname" />
+                <ScalarProperty Name="CreatedByLastname" ColumnName="CreatedByLastname" />
+                <ScalarProperty Name="CreatedByAvatar" ColumnName="CreatedByAvatar" />
+                <ScalarProperty Name="CreatedByAddress" ColumnName="CreatedByAddress" />
+                <ScalarProperty Name="CreatedByDistrict" ColumnName="CreatedByDistrict" />
+                <ScalarProperty Name="CreatedByDob" ColumnName="CreatedByDob" />
+                <ScalarProperty Name="CreatedByIsQuitJob" ColumnName="CreatedByIsQuitJob" />
+                <ScalarProperty Name="CreatedByDateCreate" ColumnName="CreatedByDateCreate" />
+                <ScalarProperty Name="CreatedByTeam" ColumnName="CreatedByTeam" />
+                <ScalarProperty Name="AssignedSupportID" ColumnName="AssignedSupportID" />
+                <ScalarProperty Name="AssignedSupportUsername" ColumnName="AssignedSupportUsername" />
+                <ScalarProperty Name="AssignedSupportFirstname" ColumnName="AssignedSupportFirstname" />
+                <ScalarProperty Name="AssignedSupportLastname" ColumnName="AssignedSupportLastname" />
+                <ScalarProperty Name="AssignedSupportAvatar" ColumnName="AssignedSupportAvatar" />
+                <ScalarProperty Name="AssignedSupportAddress" ColumnName="AssignedSupportAddress" />
+                <ScalarProperty Name="AssignedSupportDistrict" ColumnName="AssignedSupportDistrict" />
+                <ScalarProperty Name="AssignedSupportDob" ColumnName="AssignedSupportDob" />
+                <ScalarProperty Name="AssignedSupportIsQuitJob" ColumnName="AssignedSupportIsQuitJob" />
+                <ScalarProperty Name="AssignedSupportDateCreate" ColumnName="AssignedSupportDateCreate" />
+                <ScalarProperty Name="AssignedSupportTeam" ColumnName="AssignedSupportTeam" />
+                <ScalarProperty Name="AccountantTeamID" ColumnName="AccountantTeamID" />
+                <ScalarProperty Name="AccountantTeamName" ColumnName="AccountantTeamName" />
+                <ScalarProperty Name="AccountantTeamLeader" ColumnName="AccountantTeamLeader" />
+                <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="DepartmentDisplayOrder" ColumnName="DepartmentDisplayOrder" />
+                <ScalarProperty Name="DepartmentClosed" ColumnName="DepartmentClosed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_DetailDocumentTypes">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel.V_DetailDocumentTypes">
+              <MappingFragment StoreEntitySet="V_DetailDocumentTypes">
+                <ScalarProperty Name="LostAmount" ColumnName="LostAmount" />
+                <ScalarProperty Name="LendAmount" ColumnName="LendAmount" />
+                <ScalarProperty Name="ArchivedAmount" ColumnName="ArchivedAmount" />
+                <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+                <ScalarProperty Name="DocumentTypeName" ColumnName="DocumentTypeName" />
+                <ScalarProperty Name="DocumentReceivingMechanism" ColumnName="DocumentReceivingMechanism" />
+                <ScalarProperty Name="AvgAmount" ColumnName="AvgAmount" />
+                <ScalarProperty Name="RegisteredAmount" ColumnName="RegisteredAmount" />
+                <ScalarProperty Name="CurrentTotalAmount" ColumnName="CurrentTotalAmount" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="LogoS3Key" ColumnName="LogoS3Key" />
+                <ScalarProperty Name="FilterLocation" ColumnName="FilterLocation" />
+                <ScalarProperty Name="GetDocsDate" ColumnName="GetDocsDate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="Suspended" ColumnName="Suspended" />
+                <ScalarProperty Name="SuspendedTo" ColumnName="SuspendedTo" />
+                <ScalarProperty Name="Dissolved" ColumnName="Dissolved" />
+                <ScalarProperty Name="DissolvedDate" ColumnName="DissolvedDate" />
+                <ScalarProperty Name="MainAccountant" ColumnName="MainAccountant" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="AssignedToCustomerSupport" ColumnName="AssignedToCustomerSupport" />
+                <ScalarProperty Name="ResponsibleAccountantTeam" ColumnName="ResponsibleAccountantTeam" />
+                <ScalarProperty Name="LKACSoft_DepartmentCode" ColumnName="LKACSoft_DepartmentCode" />
+                <ScalarProperty Name="ContractExpiry" ColumnName="ContractExpiry" />
+                <ScalarProperty Name="ContractSignedDate" ColumnName="ContractSignedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_DetailTasks">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel.V_DetailTasks">
+              <MappingFragment StoreEntitySet="V_DetailTasks">
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="DateAssigned" ColumnName="DateAssigned" />
+                <ScalarProperty Name="TaskDeadline" ColumnName="TaskDeadline" />
+                <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+                <ScalarProperty Name="TaskTitle" ColumnName="TaskTitle" />
+                <ScalarProperty Name="TaskDetail" ColumnName="TaskDetail" />
+                <ScalarProperty Name="TaskStatus" ColumnName="TaskStatus" />
+                <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+                <ScalarProperty Name="DateCompleted" ColumnName="DateCompleted" />
+                <ScalarProperty Name="ReviewedBy" ColumnName="ReviewedBy" />
+                <ScalarProperty Name="ReviewNote" ColumnName="ReviewNote" />
+                <ScalarProperty Name="DateReview" ColumnName="DateReview" />
+                <ScalarProperty Name="IsRetried" ColumnName="IsRetried" />
+                <ScalarProperty Name="RelatedToExecution" ColumnName="RelatedToExecution" />
+                <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+                <ScalarProperty Name="DesignatedNumberOfDocument" ColumnName="DesignatedNumberOfDocument" />
+                <ScalarProperty Name="NumberOfCompletedDocument" ColumnName="NumberOfCompletedDocument" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="TaskCreatedAt" ColumnName="TaskCreatedAt" />
+                <ScalarProperty Name="AssignedUserID" ColumnName="AssignedUserID" />
+                <ScalarProperty Name="AssignedUserUsername" ColumnName="AssignedUserUsername" />
+                <ScalarProperty Name="AssignedUserFirstname" ColumnName="AssignedUserFirstname" />
+                <ScalarProperty Name="AssignedUserLastname" ColumnName="AssignedUserLastname" />
+                <ScalarProperty Name="AssignedUserAvatar" ColumnName="AssignedUserAvatar" />
+                <ScalarProperty Name="AssignedUserAddress" ColumnName="AssignedUserAddress" />
+                <ScalarProperty Name="AssignedUserDistrict" ColumnName="AssignedUserDistrict" />
+                <ScalarProperty Name="AssignedUserDob" ColumnName="AssignedUserDob" />
+                <ScalarProperty Name="AssignedUserIsQuitJob" ColumnName="AssignedUserIsQuitJob" />
+                <ScalarProperty Name="AssignedUserDateCreate" ColumnName="AssignedUserDateCreate" />
+                <ScalarProperty Name="AssignedUserTeam" ColumnName="AssignedUserTeam" />
+                <ScalarProperty Name="ReviewedUserID" ColumnName="ReviewedUserID" />
+                <ScalarProperty Name="ReviewedUserUsername" ColumnName="ReviewedUserUsername" />
+                <ScalarProperty Name="ReviewedUserFirstname" ColumnName="ReviewedUserFirstname" />
+                <ScalarProperty Name="ReviewedUserLastname" ColumnName="ReviewedUserLastname" />
+                <ScalarProperty Name="ReviewedUserAvatar" ColumnName="ReviewedUserAvatar" />
+                <ScalarProperty Name="ReviewedUserAddress" ColumnName="ReviewedUserAddress" />
+                <ScalarProperty Name="ReviewedUserDistrict" ColumnName="ReviewedUserDistrict" />
+                <ScalarProperty Name="ReviewedUserDob" ColumnName="ReviewedUserDob" />
+                <ScalarProperty Name="ReviewedUserIsQuitJob" ColumnName="ReviewedUserIsQuitJob" />
+                <ScalarProperty Name="ReviewedUserDateCreate" ColumnName="ReviewedUserDateCreate" />
+                <ScalarProperty Name="ReviewedUserTeam" ColumnName="ReviewedUserTeam" />
+                <ScalarProperty Name="ExecutionID" ColumnName="ExecutionID" />
+                <ScalarProperty Name="ExecutionName" ColumnName="ExecutionName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="IsPeriodic" ColumnName="IsPeriodic" />
+                <ScalarProperty Name="ProcessSchemaStatus" ColumnName="ProcessSchemaStatus" />
+                <ScalarProperty Name="ProcessSchemaID" ColumnName="ProcessSchemaID" />
+                <ScalarProperty Name="RelatedToCustomer" ColumnName="RelatedToCustomer" />
+                <ScalarProperty Name="TaskStatusID" ColumnName="TaskStatusID" />
+                <ScalarProperty Name="TaskStatusName" ColumnName="TaskStatusName" />
+                <ScalarProperty Name="TaskStatusDesignatedColor" ColumnName="TaskStatusDesignatedColor" />
+                <ScalarProperty Name="PriorityID" ColumnName="PriorityID" />
+                <ScalarProperty Name="PriorityName" ColumnName="PriorityName" />
+                <ScalarProperty Name="PriorityDesignatedColor" ColumnName="PriorityDesignatedColor" />
+                <ScalarProperty Name="TaskTypeID" ColumnName="TaskTypeID" />
+                <ScalarProperty Name="TaskTypeName" ColumnName="TaskTypeName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TaskTypeDesignatedColor" ColumnName="TaskTypeDesignatedColor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_DetailUsers">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel.V_DetailUsers">
+              <MappingFragment StoreEntitySet="V_DetailUsers">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DoneTasksCount" ColumnName="DoneTasksCount" />
+                <ScalarProperty Name="InProgressTasksCount" ColumnName="InProgressTasksCount" />
+                <ScalarProperty Name="TeamLeader" ColumnName="TeamLeader" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="UserDateCreated" ColumnName="UserDateCreated" />
+                <ScalarProperty Name="IsQuitJob" ColumnName="IsQuitJob" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_DocumentTypeDtos">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel.V_DocumentTypeDtos">
+              <MappingFragment StoreEntitySet="V_DocumentTypeDtos">
+                <ScalarProperty Name="LostAmount" ColumnName="LostAmount" />
+                <ScalarProperty Name="LendAmount" ColumnName="LendAmount" />
+                <ScalarProperty Name="ArchivedAmount" ColumnName="ArchivedAmount" />
+                <ScalarProperty Name="DocumentTypeName" ColumnName="DocumentTypeName" />
+                <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_DetailUsersKPI">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel.V_DetailUsersKPI">
+              <MappingFragment StoreEntitySet="V_DetailUsersKPI">
+                <ScalarProperty Name="Late" ColumnName="Late" />
+                <ScalarProperty Name="DoneBeforeDL" ColumnName="DoneBeforeDL" />
+                <ScalarProperty Name="DoneOnTime" ColumnName="DoneOnTime" />
+                <ScalarProperty Name="InComplete" ColumnName="InComplete" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_DetailJobTaskFiles">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel.V_DetailJobTaskFiles">
+              <MappingFragment StoreEntitySet="V_DetailJobTaskFiles">
+                <ScalarProperty Name="ContractSignedDate" ColumnName="ContractSignedDate" />
+                <ScalarProperty Name="ContractExpiry" ColumnName="ContractExpiry" />
+                <ScalarProperty Name="LKACSoft_DepartmentCode" ColumnName="LKACSoft_DepartmentCode" />
+                <ScalarProperty Name="ResponsibleAccountantTeam" ColumnName="ResponsibleAccountantTeam" />
+                <ScalarProperty Name="AssignedToCustomerSupport" ColumnName="AssignedToCustomerSupport" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="MainAccountant" ColumnName="MainAccountant" />
+                <ScalarProperty Name="DissolvedDate" ColumnName="DissolvedDate" />
+                <ScalarProperty Name="Dissolved" ColumnName="Dissolved" />
+                <ScalarProperty Name="SuspendedTo" ColumnName="SuspendedTo" />
+                <ScalarProperty Name="Suspended" ColumnName="Suspended" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="GetDocsDate" ColumnName="GetDocsDate" />
+                <ScalarProperty Name="FilterLocation" ColumnName="FilterLocation" />
+                <ScalarProperty Name="LogoS3Key" ColumnName="LogoS3Key" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="RegisteredAmount" ColumnName="RegisteredAmount" />
+                <ScalarProperty Name="AvgAmount" ColumnName="AvgAmount" />
+                <ScalarProperty Name="DocumentReceivingMechanism" ColumnName="DocumentReceivingMechanism" />
+                <ScalarProperty Name="DocumentTypeName" ColumnName="DocumentTypeName" />
+                <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+                <ScalarProperty Name="IsPeriodic" ColumnName="IsPeriodic" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="CreatedByForExecution" ColumnName="CreatedByForExecution" />
+                <ScalarProperty Name="ExecutionName" ColumnName="ExecutionName" />
+                <ScalarProperty Name="ExecutionID" ColumnName="ExecutionID" />
+                <ScalarProperty Name="CreatedByTeam" ColumnName="CreatedByTeam" />
+                <ScalarProperty Name="CreatedByDateCreate" ColumnName="CreatedByDateCreate" />
+                <ScalarProperty Name="CreatedByIsQuitJob" ColumnName="CreatedByIsQuitJob" />
+                <ScalarProperty Name="CreatedByDob" ColumnName="CreatedByDob" />
+                <ScalarProperty Name="CreatedByDistrict" ColumnName="CreatedByDistrict" />
+                <ScalarProperty Name="CreatedByAddress" ColumnName="CreatedByAddress" />
+                <ScalarProperty Name="CreatedByAvatar" ColumnName="CreatedByAvatar" />
+                <ScalarProperty Name="CreatedByLastname" ColumnName="CreatedByLastname" />
+                <ScalarProperty Name="CreatedByFirstname" ColumnName="CreatedByFirstname" />
+                <ScalarProperty Name="CreatedByUsername" ColumnName="CreatedByUsername" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="accountantTeam" ColumnName="accountantTeam" />
+                <ScalarProperty Name="accountantDateCreate" ColumnName="accountantDateCreate" />
+                <ScalarProperty Name="accountantIsQuitJob" ColumnName="accountantIsQuitJob" />
+                <ScalarProperty Name="accountantDob" ColumnName="accountantDob" />
+                <ScalarProperty Name="accountantDistrict" ColumnName="accountantDistrict" />
+                <ScalarProperty Name="accountantAddress" ColumnName="accountantAddress" />
+                <ScalarProperty Name="accountantAvatar" ColumnName="accountantAvatar" />
+                <ScalarProperty Name="accountantLastname" ColumnName="accountantLastname" />
+                <ScalarProperty Name="accountantFirstname" ColumnName="accountantFirstname" />
+                <ScalarProperty Name="accountantUsername" ColumnName="accountantUsername" />
+                <ScalarProperty Name="accountantID" ColumnName="accountantID" />
+                <ScalarProperty Name="ArchivingStatusName" ColumnName="ArchivingStatusName" />
+                <ScalarProperty Name="ArchivingStatusID" ColumnName="ArchivingStatusID" />
+                <ScalarProperty Name="AccountingStatusName" ColumnName="AccountingStatusName" />
+                <ScalarProperty Name="AccountingStatusID" ColumnName="AccountingStatusID" />
+                <ScalarProperty Name="ReturnedDate" ColumnName="ReturnedDate" />
+                <ScalarProperty Name="ArchivedDate" ColumnName="ArchivedDate" />
+                <ScalarProperty Name="PhysicalLocation" ColumnName="PhysicalLocation" />
+                <ScalarProperty Name="ReadyToBeReturnedAt" ColumnName="ReadyToBeReturnedAt" />
+                <ScalarProperty Name="AccountantReceivedAt" ColumnName="AccountantReceivedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="JobTaskFileCode" ColumnName="JobTaskFileCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_DetailProcessSchemaStatuses">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel.V_DetailProcessSchemaStatuses">
+              <MappingFragment StoreEntitySet="V_DetailProcessSchemaStatuses">
+                <ScalarProperty Name="DesignatedColor" ColumnName="DesignatedColor" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="ProcessStatusID" ColumnName="ProcessStatusID" />
+                <ScalarProperty Name="ProcessSchemaUpdatedAt" ColumnName="ProcessSchemaUpdatedAt" />
+                <ScalarProperty Name="ProcessSchemaCreatedAt" ColumnName="ProcessSchemaCreatedAt" />
+                <ScalarProperty Name="ProcessSchemaDescription" ColumnName="ProcessSchemaDescription" />
+                <ScalarProperty Name="ProcessSchemaName" ColumnName="ProcessSchemaName" />
+                <ScalarProperty Name="ProcessSchemaID" ColumnName="ProcessSchemaID" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
+                <ScalarProperty Name="ProcessStatus" ColumnName="ProcessStatus" />
+                <ScalarProperty Name="ProcessSchema" ColumnName="ProcessSchema" />
+                <ScalarProperty Name="ProcessSchemaStatusID" ColumnName="ProcessSchemaStatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_DetailExecutions">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel.V_DetailExecutions">
+              <MappingFragment StoreEntitySet="V_DetailExecutions">
+                <ScalarProperty Name="TaskCount" ColumnName="TaskCount" />
+                <ScalarProperty Name="ContractSignedDate" ColumnName="ContractSignedDate" />
+                <ScalarProperty Name="ContractExpiry" ColumnName="ContractExpiry" />
+                <ScalarProperty Name="LKACSoft_DepartmentCode" ColumnName="LKACSoft_DepartmentCode" />
+                <ScalarProperty Name="ResponsibleAccountantTeam" ColumnName="ResponsibleAccountantTeam" />
+                <ScalarProperty Name="AssignedToCustomerSupport" ColumnName="AssignedToCustomerSupport" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="MainAccountant" ColumnName="MainAccountant" />
+                <ScalarProperty Name="DissolvedDate" ColumnName="DissolvedDate" />
+                <ScalarProperty Name="Dissolved" ColumnName="Dissolved" />
+                <ScalarProperty Name="SuspendedTo" ColumnName="SuspendedTo" />
+                <ScalarProperty Name="Suspended" ColumnName="Suspended" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="GetDocsDate" ColumnName="GetDocsDate" />
+                <ScalarProperty Name="FilterLocation" ColumnName="FilterLocation" />
+                <ScalarProperty Name="LogoS3Key" ColumnName="LogoS3Key" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="ProcessSchemaDescription" ColumnName="ProcessSchemaDescription" />
+                <ScalarProperty Name="ProcessSchemaName" ColumnName="ProcessSchemaName" />
+                <ScalarProperty Name="ProcessSchemaID" ColumnName="ProcessSchemaID" />
+                <ScalarProperty Name="DesignatedColor" ColumnName="DesignatedColor" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="ProcessStatusID" ColumnName="ProcessStatusID" />
+                <ScalarProperty Name="processSchemaStatusCreatedAt" ColumnName="processSchemaStatusCreatedAt" />
+                <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
+                <ScalarProperty Name="ProcessSchemaStatusID" ColumnName="ProcessSchemaStatusID" />
+                <ScalarProperty Name="CreatedByTeam" ColumnName="CreatedByTeam" />
+                <ScalarProperty Name="CreatedByDateCreate" ColumnName="CreatedByDateCreate" />
+                <ScalarProperty Name="CreatedByIsQuitJob" ColumnName="CreatedByIsQuitJob" />
+                <ScalarProperty Name="CreatedByDob" ColumnName="CreatedByDob" />
+                <ScalarProperty Name="CreatedByDistrict" ColumnName="CreatedByDistrict" />
+                <ScalarProperty Name="CreatedByAddress" ColumnName="CreatedByAddress" />
+                <ScalarProperty Name="CreatedByAvatar" ColumnName="CreatedByAvatar" />
+                <ScalarProperty Name="CreatedByLastname" ColumnName="CreatedByLastname" />
+                <ScalarProperty Name="CreatedByFirstname" ColumnName="CreatedByFirstname" />
+                <ScalarProperty Name="CreatedByUsername" ColumnName="CreatedByUsername" />
+                <ScalarProperty Name="CreatedByID" ColumnName="CreatedByID" />
+                <ScalarProperty Name="FieldValue" ColumnName="FieldValue" />
+                <ScalarProperty Name="FieldName" ColumnName="FieldName" />
+                <ScalarProperty Name="IsPeriodic" ColumnName="IsPeriodic" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="CreatedByForExecution" ColumnName="CreatedByForExecution" />
+                <ScalarProperty Name="ExecutionName" ColumnName="ExecutionName" />
+                <ScalarProperty Name="ExecutionID" ColumnName="ExecutionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

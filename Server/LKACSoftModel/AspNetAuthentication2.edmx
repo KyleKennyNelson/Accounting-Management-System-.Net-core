@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="db_ab6e43_lkacsoftdbModel4.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MenuPermission">
+          <Key>
+            <PropertyRef Name="RoleMenuId" />
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="RoleMenuId" Type="int" Nullable="false" />
+          <Property Name="PermissionId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_ApiPermissionRole' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="V_ApiPermissionRole">
+          <Property Name="API" Type="nvarchar(max)" />
+          <Property Name="Permission" Type="nvarchar" MaxLength="50" />
+          <Property Name="Role" Type="nvarchar" MaxLength="256" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_Menu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_Menu">
+          <Key>
+            <PropertyRef Name="menuID" />
+            <PropertyRef Name="menuName" />
+          </Key>
+          <Property Name="menuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="menuName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="menuParent" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_Permission_RoleMenu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_Permission_RoleMenu">
+          <Key>
+            <PropertyRef Name="rolemenuID" />
+            <PropertyRef Name="permissionName" />
+            <PropertyRef Name="permissionID" />
+          </Key>
+          <Property Name="rolemenuID" Type="int" Nullable="false" />
+          <Property Name="permissionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="permissionID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_Role' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="256" />
+          <Property Name="UserCount" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_Role_Menu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_Role_Menu">
+          <Key>
+            <PropertyRef Name="menuID" />
+            <PropertyRef Name="rolemenuID" />
+            <PropertyRef Name="permissionID" />
+          </Key>
+          <Property Name="roleName" Type="nvarchar" MaxLength="256" />
+          <Property Name="menuID" Type="int" Nullable="false" />
+          <Property Name="rolemenuID" Type="int" Nullable="false" />
+          <Property Name="permissionID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_User">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="EmailVerified" />
+            <PropertyRef Name="PhoneVerified" />
+            <PropertyRef Name="Locked" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailVerified" Type="bit" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneVerified" Type="bit" Nullable="false" />
+          <Property Name="Locked" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_UserId_RoleId' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_UserId_RoleId">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityContainer Name="db_ab6e43_lkacsoftdbModel4StoreContainer">
+          <EntitySet Name="MenuPermission" EntityType="Self.MenuPermission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_Menu" EntityType="Self.V_Menu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_Menu].[menuID] AS [menuID], 
+    [V_Menu].[menuName] AS [menuName], 
+    [V_Menu].[menuParent] AS [menuParent]
+    FROM [dbo].[V_Menu] AS [V_Menu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_Permission_RoleMenu" EntityType="Self.V_Permission_RoleMenu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_Permission_RoleMenu].[rolemenuID] AS [rolemenuID], 
+    [V_Permission_RoleMenu].[permissionName] AS [permissionName], 
+    [V_Permission_RoleMenu].[permissionID] AS [permissionID]
+    FROM [dbo].[V_Permission_RoleMenu] AS [V_Permission_RoleMenu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_Role" EntityType="Self.V_Role" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_Role].[RoleID] AS [RoleID], 
+    [V_Role].[RoleName] AS [RoleName], 
+    [V_Role].[UserCount] AS [UserCount]
+    FROM [dbo].[V_Role] AS [V_Role]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_Role_Menu" EntityType="Self.V_Role_Menu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_Role_Menu].[roleName] AS [roleName], 
+    [V_Role_Menu].[menuID] AS [menuID], 
+    [V_Role_Menu].[rolemenuID] AS [rolemenuID], 
+    [V_Role_Menu].[permissionID] AS [permissionID]
+    FROM [dbo].[V_Role_Menu] AS [V_Role_Menu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_User" EntityType="Self.V_User" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_User].[Id] AS [Id], 
+    [V_User].[UserName] AS [UserName], 
+    [V_User].[Email] AS [Email], 
+    [V_User].[EmailVerified] AS [EmailVerified], 
+    [V_User].[PhoneNumber] AS [PhoneNumber], 
+    [V_User].[PhoneVerified] AS [PhoneVerified], 
+    [V_User].[Locked] AS [Locked]
+    FROM [dbo].[V_User] AS [V_User]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_UserId_RoleId" EntityType="Self.V_UserId_RoleId" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_UserId_RoleId].[UserId] AS [UserId], 
+    [V_UserId_RoleId].[RoleId] AS [RoleId], 
+    [V_UserId_RoleId].[RoleName] AS [RoleName]
+    FROM [dbo].[V_UserId_RoleId] AS [V_UserId_RoleId]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_ab6e43_lkacsoftdbModel4" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MenuPermission">
+          <Key>
+            <PropertyRef Name="RoleMenuId" />
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="RoleMenuId" Type="Int32" Nullable="false" />
+          <Property Name="PermissionId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_Menu">
+          <Key>
+            <PropertyRef Name="menuID" />
+            <PropertyRef Name="menuName" />
+          </Key>
+          <Property Name="menuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="menuName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="menuParent" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="db_ab6e43_lkacsoftdbEntities6" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MenuPermissions" EntityType="Self.MenuPermission" />
+          <EntitySet Name="V_Menu" EntityType="Self.V_Menu" />
+          <EntitySet Name="V_Permission_RoleMenu" EntityType="db_ab6e43_lkacsoftdbModel4.V_Permission_RoleMenu" />
+          <EntitySet Name="V_Role" EntityType="db_ab6e43_lkacsoftdbModel4.V_Role" />
+          <EntitySet Name="V_Role_Menu" EntityType="db_ab6e43_lkacsoftdbModel4.V_Role_Menu" />
+          <EntitySet Name="V_UserId_RoleId" EntityType="db_ab6e43_lkacsoftdbModel4.V_UserId_RoleId" />
+          <EntitySet Name="V_User" EntityType="db_ab6e43_lkacsoftdbModel4.V_User" />
+        </EntityContainer>
+        <EntityType Name="V_Permission_RoleMenu">
+          <Key>
+            <PropertyRef Name="rolemenuID" />
+            <PropertyRef Name="permissionName" />
+            <PropertyRef Name="permissionID" />
+          </Key>
+          <Property Name="rolemenuID" Type="Int32" Nullable="false" />
+          <Property Name="permissionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="permissionID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="RoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="UserCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="V_Role_Menu">
+          <Key>
+            <PropertyRef Name="menuID" />
+            <PropertyRef Name="rolemenuID" />
+            <PropertyRef Name="permissionID" />
+          </Key>
+          <Property Name="roleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="menuID" Type="Int32" Nullable="false" />
+          <Property Name="rolemenuID" Type="Int32" Nullable="false" />
+          <Property Name="permissionID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_UserId_RoleId">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="RoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_User">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="EmailVerified" />
+            <PropertyRef Name="PhoneVerified" />
+            <PropertyRef Name="Locked" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailVerified" Type="Boolean" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneVerified" Type="Boolean" Nullable="false" />
+          <Property Name="Locked" Type="Boolean" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_ab6e43_lkacsoftdbModel4StoreContainer" CdmEntityContainer="db_ab6e43_lkacsoftdbEntities6">
+          <EntitySetMapping Name="MenuPermissions">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel4.MenuPermission">
+              <MappingFragment StoreEntitySet="MenuPermission">
+                <ScalarProperty Name="RoleMenuId" ColumnName="RoleMenuId" />
+                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Menu">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel4.V_Menu">
+              <MappingFragment StoreEntitySet="V_Menu">
+                <ScalarProperty Name="menuID" ColumnName="menuID" />
+                <ScalarProperty Name="menuName" ColumnName="menuName" />
+                <ScalarProperty Name="menuParent" ColumnName="menuParent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Permission_RoleMenu">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel4.V_Permission_RoleMenu">
+              <MappingFragment StoreEntitySet="V_Permission_RoleMenu">
+                <ScalarProperty Name="permissionID" ColumnName="permissionID" />
+                <ScalarProperty Name="permissionName" ColumnName="permissionName" />
+                <ScalarProperty Name="rolemenuID" ColumnName="rolemenuID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Role">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel4.V_Role">
+              <MappingFragment StoreEntitySet="V_Role">
+                <ScalarProperty Name="UserCount" ColumnName="UserCount" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Role_Menu">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel4.V_Role_Menu">
+              <MappingFragment StoreEntitySet="V_Role_Menu">
+                <ScalarProperty Name="permissionID" ColumnName="permissionID" />
+                <ScalarProperty Name="rolemenuID" ColumnName="rolemenuID" />
+                <ScalarProperty Name="menuID" ColumnName="menuID" />
+                <ScalarProperty Name="roleName" ColumnName="roleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_UserId_RoleId">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel4.V_UserId_RoleId">
+              <MappingFragment StoreEntitySet="V_UserId_RoleId">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_User">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel4.V_User">
+              <MappingFragment StoreEntitySet="V_User">
+                <ScalarProperty Name="Locked" ColumnName="Locked" />
+                <ScalarProperty Name="PhoneVerified" ColumnName="PhoneVerified" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="EmailVerified" ColumnName="EmailVerified" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

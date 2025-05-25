@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b651d37fc4d84ba7bab2c16c37c2e76d" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_AccountantTeam" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_Customer" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_Department" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_DocumentLendingHistory" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_DocumentType" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_Execution" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_Feedback" Width="1.5" PointX="7.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_JobTaskFile" Width="1.5" PointX="10.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_Position" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_RolePosition" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_Customer_LKACSoft_AccountantTeam" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_Customer_LKACSoft_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_Execution_LKACSoft_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_RolePosition_LKACSoft_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_Feedback_LKACSoft_Execution" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_JobTaskFile_LKACSoft_Execution" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_RolePosition_Position" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_Notification" Width="1.5" PointX="8.375" PointY="0.875" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_UserNotification" Width="1.5" PointX="10.625" PointY="1.125" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_UserNotification_LKACSoft_Notification" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_CustomerDocumentType" Width="1.5" PointX="8.375" PointY="3.875" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_JobTaskFile_LKACSoft_CustomerDocumentType" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

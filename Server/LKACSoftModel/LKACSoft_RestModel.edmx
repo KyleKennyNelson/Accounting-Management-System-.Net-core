@@ -1,0 +1,1202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="db_ab6e43_lkacsoftdbModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LKACSoft_AccountingStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LKACSoft_ArchivingStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LKACSoft_LendDocument">
+          <Key>
+            <PropertyRef Name="DocumentLendID" />
+            <PropertyRef Name="FileCode" />
+          </Key>
+          <Property Name="DocumentLendID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FileCode" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Priority">
+          <Key>
+            <PropertyRef Name="PriorityID" />
+          </Key>
+          <Property Name="PriorityID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PriorityName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DesignatedColor" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LKACSoft_ProcessSchema">
+          <Key>
+            <PropertyRef Name="ProcessSchemaID" />
+          </Key>
+          <Property Name="ProcessSchemaID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedAt" Type="date" />
+          <Property Name="UpdatedAt" Type="date" />
+        </EntityType>
+        <EntityType Name="LKACSoft_ProcessSchemaStatus">
+          <Key>
+            <PropertyRef Name="ProcessSchemaStatusID" />
+          </Key>
+          <Property Name="ProcessSchemaStatusID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ProcessSchema" Type="varchar" MaxLength="255" />
+          <Property Name="ProcessStatus" Type="varchar" MaxLength="255" />
+          <Property Name="OrderIndex" Type="int" />
+          <Property Name="CreatedAt" Type="date" />
+        </EntityType>
+        <EntityType Name="LKACSoft_ProcessStatus">
+          <Key>
+            <PropertyRef Name="ProcessStatusID" />
+          </Key>
+          <Property Name="ProcessStatusID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="StatusName" Type="nvarchar" MaxLength="255" />
+          <Property Name="DesignatedColor" Type="varchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="LKACSoft_RequestToCustomerSupport">
+          <Key>
+            <PropertyRef Name="RequestID" />
+          </Key>
+          <Property Name="RequestID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="255" />
+          <Property Name="Details" Type="varchar" MaxLength="255" />
+          <Property Name="createAt" Type="date" />
+          <Property Name="IsFromStaff" Type="bit" />
+          <Property Name="StaffID" Type="varchar" MaxLength="255" />
+          <Property Name="IsFromCustomer" Type="bit" />
+          <Property Name="CustomerID" Type="varchar" MaxLength="255" />
+          <Property Name="DateAssigned" Type="date" />
+          <Property Name="DateResolved" Type="date" />
+          <Property Name="DateVerified" Type="date" />
+          <Property Name="Status" Type="varchar" MaxLength="255" />
+          <Property Name="CustomerSupportComment" Type="varchar" MaxLength="255" />
+          <Property Name="CustomerSupportID" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Task">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DateAssigned" Type="date" />
+          <Property Name="TaskDeadline" Type="date" />
+          <Property Name="AssignedTo" Type="varchar" MaxLength="255" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="Detail" Type="nvarchar" MaxLength="200" />
+          <Property Name="TaskStatusID" Type="varchar" MaxLength="255" />
+          <Property Name="DateAccepted" Type="date" />
+          <Property Name="DateCompleted" Type="date" />
+          <Property Name="ReviewedBy" Type="varchar" MaxLength="255" />
+          <Property Name="ReviewNote" Type="nvarchar" MaxLength="2000" />
+          <Property Name="DateReview" Type="date" />
+          <Property Name="IsRetried" Type="bit" />
+          <Property Name="RelatedToExecution" Type="varchar" MaxLength="255" />
+          <Property Name="TaskType" Type="varchar" MaxLength="255" />
+          <Property Name="DesignatedNumberOfDocument" Type="int" />
+          <Property Name="NumberOfCompletedDocument" Type="int" />
+          <Property Name="NumberOfRetrievedDocument" Type="int" />
+          <Property Name="Priority" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedAt" Type="date" />
+        </EntityType>
+        <EntityType Name="LKACSoft_TaskComment">
+          <Key>
+            <PropertyRef Name="CommentID" />
+          </Key>
+          <Property Name="CommentID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TaskID" Type="varchar" MaxLength="255" />
+          <Property Name="CommentedBy" Type="varchar" MaxLength="255" />
+          <Property Name="createdAt" Type="date" />
+          <Property Name="updatedAt" Type="date" />
+          <Property Name="Details" Type="nvarchar" MaxLength="2048" />
+        </EntityType>
+        <EntityType Name="LKACSoft_TaskStatus">
+          <Key>
+            <PropertyRef Name="TaskStatusID" />
+          </Key>
+          <Property Name="TaskStatusID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TaskStatusName" Type="nvarchar" MaxLength="255" />
+          <Property Name="DesignatedColor" Type="varchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="LKACSoft_TaskType">
+          <Key>
+            <PropertyRef Name="TaskTypeID" />
+          </Key>
+          <Property Name="TaskTypeID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TaskTypeName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1024" />
+          <Property Name="TaskTypeDesignatedColor" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LKACSoft_TaskTypeResponsiblePosition">
+          <Key>
+            <PropertyRef Name="TaskStatusID" />
+            <PropertyRef Name="TaskTypeID" />
+            <PropertyRef Name="PositionCode" />
+          </Key>
+          <Property Name="TaskStatusID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TaskTypeID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PositionCode" Type="char" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LKACSoft_TaskTypeStatus">
+          <Key>
+            <PropertyRef Name="TaskStatusID" />
+            <PropertyRef Name="TaskTypeID" />
+          </Key>
+          <Property Name="TaskStatusID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TaskTypeID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="AssociatedProcessSchemaStatus" Type="varchar" MaxLength="255" />
+          <Property Name="RequiredProcessSchemaStatus" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LKACSoft_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="255" />
+          <Property Name="Firstname" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Avatar" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="District" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dob" Type="date" />
+          <Property Name="IsQuitJob" Type="bit" />
+          <Property Name="DateCreate" Type="date" />
+          <Property Name="Team" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LKACSoft_UserPosition">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="LKACSoft_PositionCode" />
+            <PropertyRef Name="LKACSoft_DepartmentCode" />
+          </Key>
+          <Property Name="UserID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="AssignedDate" Type="date" />
+          <Property Name="LKACSoft_PositionCode" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="LKACSoft_DepartmentCode" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'db_ab6e43_lkacsoftdb.dbo.V_DetailUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <Association Name="FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessSchema">
+          <End Role="LKACSoft_ProcessSchema" Type="Self.LKACSoft_ProcessSchema" Multiplicity="0..1" />
+          <End Role="LKACSoft_ProcessSchemaStatus" Type="Self.LKACSoft_ProcessSchemaStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_ProcessSchema">
+              <PropertyRef Name="ProcessSchemaID" />
+            </Principal>
+            <Dependent Role="LKACSoft_ProcessSchemaStatus">
+              <PropertyRef Name="ProcessSchema" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessStatus">
+          <End Role="LKACSoft_ProcessStatus" Type="Self.LKACSoft_ProcessStatus" Multiplicity="0..1" />
+          <End Role="LKACSoft_ProcessSchemaStatus" Type="Self.LKACSoft_ProcessSchemaStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_ProcessStatus">
+              <PropertyRef Name="ProcessStatusID" />
+            </Principal>
+            <Dependent Role="LKACSoft_ProcessSchemaStatus">
+              <PropertyRef Name="ProcessStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_CustomerSupportID">
+          <End Role="LKACSoft_User" Type="Self.LKACSoft_User" Multiplicity="0..1" />
+          <End Role="LKACSoft_RequestToCustomerSupport" Type="Self.LKACSoft_RequestToCustomerSupport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LKACSoft_RequestToCustomerSupport">
+              <PropertyRef Name="CustomerSupportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_StaffID">
+          <End Role="LKACSoft_User" Type="Self.LKACSoft_User" Multiplicity="0..1" />
+          <End Role="LKACSoft_RequestToCustomerSupport" Type="Self.LKACSoft_RequestToCustomerSupport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LKACSoft_RequestToCustomerSupport">
+              <PropertyRef Name="StaffID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Task_LKACSoft_Priority">
+          <End Role="LKACSoft_Priority" Type="Self.LKACSoft_Priority" Multiplicity="0..1" />
+          <End Role="LKACSoft_Task" Type="Self.LKACSoft_Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Priority">
+              <PropertyRef Name="PriorityID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Task">
+              <PropertyRef Name="Priority" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Task_LKACSoft_TaskStatus">
+          <End Role="LKACSoft_TaskStatus" Type="Self.LKACSoft_TaskStatus" Multiplicity="0..1" />
+          <End Role="LKACSoft_Task" Type="Self.LKACSoft_Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_TaskStatus">
+              <PropertyRef Name="TaskStatusID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Task">
+              <PropertyRef Name="TaskStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Task_LKACSoft_TaskType">
+          <End Role="LKACSoft_TaskType" Type="Self.LKACSoft_TaskType" Multiplicity="0..1" />
+          <End Role="LKACSoft_Task" Type="Self.LKACSoft_Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_TaskType">
+              <PropertyRef Name="TaskTypeID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Task">
+              <PropertyRef Name="TaskType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Task_LKACSoft_User_AssignedTo">
+          <End Role="LKACSoft_User" Type="Self.LKACSoft_User" Multiplicity="0..1" />
+          <End Role="LKACSoft_Task" Type="Self.LKACSoft_Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Task">
+              <PropertyRef Name="AssignedTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Task_LKACSoft_User_ReviewedBy">
+          <End Role="LKACSoft_User" Type="Self.LKACSoft_User" Multiplicity="0..1" />
+          <End Role="LKACSoft_Task" Type="Self.LKACSoft_Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Task">
+              <PropertyRef Name="ReviewedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskComment_LKACSoft_Task">
+          <End Role="LKACSoft_Task" Type="Self.LKACSoft_Task" Multiplicity="0..1" />
+          <End Role="LKACSoft_TaskComment" Type="Self.LKACSoft_TaskComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Task">
+              <PropertyRef Name="TaskID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskComment">
+              <PropertyRef Name="TaskID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskComment_LKACSoft_User">
+          <End Role="LKACSoft_User" Type="Self.LKACSoft_User" Multiplicity="0..1" />
+          <End Role="LKACSoft_TaskComment" Type="Self.LKACSoft_TaskComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskComment">
+              <PropertyRef Name="CommentedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskTypeResponsiblePosition_LKACSoft_TaskTypeStatus">
+          <End Role="LKACSoft_TaskTypeStatus" Type="Self.LKACSoft_TaskTypeStatus" Multiplicity="1" />
+          <End Role="LKACSoft_TaskTypeResponsiblePosition" Type="Self.LKACSoft_TaskTypeResponsiblePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_TaskTypeStatus">
+              <PropertyRef Name="TaskStatusID" />
+              <PropertyRef Name="TaskTypeID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskTypeResponsiblePosition">
+              <PropertyRef Name="TaskStatusID" />
+              <PropertyRef Name="TaskTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_AssociatedProcessSchemaStatus">
+          <End Role="LKACSoft_ProcessSchemaStatus" Type="Self.LKACSoft_ProcessSchemaStatus" Multiplicity="0..1" />
+          <End Role="LKACSoft_TaskTypeStatus" Type="Self.LKACSoft_TaskTypeStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_ProcessSchemaStatus">
+              <PropertyRef Name="ProcessSchemaStatusID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskTypeStatus">
+              <PropertyRef Name="AssociatedProcessSchemaStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_RequiredProcessSchemaStatus">
+          <End Role="LKACSoft_ProcessSchemaStatus" Type="Self.LKACSoft_ProcessSchemaStatus" Multiplicity="0..1" />
+          <End Role="LKACSoft_TaskTypeStatus" Type="Self.LKACSoft_TaskTypeStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_ProcessSchemaStatus">
+              <PropertyRef Name="ProcessSchemaStatusID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskTypeStatus">
+              <PropertyRef Name="RequiredProcessSchemaStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskStatus">
+          <End Role="LKACSoft_TaskStatus" Type="Self.LKACSoft_TaskStatus" Multiplicity="1" />
+          <End Role="LKACSoft_TaskTypeStatus" Type="Self.LKACSoft_TaskTypeStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_TaskStatus">
+              <PropertyRef Name="TaskStatusID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskTypeStatus">
+              <PropertyRef Name="TaskStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskType">
+          <End Role="LKACSoft_TaskType" Type="Self.LKACSoft_TaskType" Multiplicity="1" />
+          <End Role="LKACSoft_TaskTypeStatus" Type="Self.LKACSoft_TaskTypeStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_TaskType">
+              <PropertyRef Name="TaskTypeID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskTypeStatus">
+              <PropertyRef Name="TaskTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_UserPosition_LKACSoft_User">
+          <End Role="LKACSoft_User" Type="Self.LKACSoft_User" Multiplicity="1" />
+          <End Role="LKACSoft_UserPosition" Type="Self.LKACSoft_UserPosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LKACSoft_UserPosition">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_ab6e43_lkacsoftdbModel2StoreContainer">
+          <EntitySet Name="LKACSoft_AccountingStatus" EntityType="Self.LKACSoft_AccountingStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_ArchivingStatus" EntityType="Self.LKACSoft_ArchivingStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_LendDocument" EntityType="Self.LKACSoft_LendDocument" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_Priority" EntityType="Self.LKACSoft_Priority" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_ProcessSchema" EntityType="Self.LKACSoft_ProcessSchema" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_ProcessSchemaStatus" EntityType="Self.LKACSoft_ProcessSchemaStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_ProcessStatus" EntityType="Self.LKACSoft_ProcessStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_RequestToCustomerSupport" EntityType="Self.LKACSoft_RequestToCustomerSupport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_Task" EntityType="Self.LKACSoft_Task" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_TaskComment" EntityType="Self.LKACSoft_TaskComment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_TaskStatus" EntityType="Self.LKACSoft_TaskStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_TaskType" EntityType="Self.LKACSoft_TaskType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_TaskTypeResponsiblePosition" EntityType="Self.LKACSoft_TaskTypeResponsiblePosition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_TaskTypeStatus" EntityType="Self.LKACSoft_TaskTypeStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_User" EntityType="Self.LKACSoft_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_UserPosition" EntityType="Self.LKACSoft_UserPosition" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessSchema" Association="Self.FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessSchema">
+            <End Role="LKACSoft_ProcessSchema" EntitySet="LKACSoft_ProcessSchema" />
+            <End Role="LKACSoft_ProcessSchemaStatus" EntitySet="LKACSoft_ProcessSchemaStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessStatus" Association="Self.FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessStatus">
+            <End Role="LKACSoft_ProcessStatus" EntitySet="LKACSoft_ProcessStatus" />
+            <End Role="LKACSoft_ProcessSchemaStatus" EntitySet="LKACSoft_ProcessSchemaStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_CustomerSupportID" Association="Self.FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_CustomerSupportID">
+            <End Role="LKACSoft_User" EntitySet="LKACSoft_User" />
+            <End Role="LKACSoft_RequestToCustomerSupport" EntitySet="LKACSoft_RequestToCustomerSupport" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_StaffID" Association="Self.FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_StaffID">
+            <End Role="LKACSoft_User" EntitySet="LKACSoft_User" />
+            <End Role="LKACSoft_RequestToCustomerSupport" EntitySet="LKACSoft_RequestToCustomerSupport" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Task_LKACSoft_Priority" Association="Self.FK_LKACSoft_Task_LKACSoft_Priority">
+            <End Role="LKACSoft_Priority" EntitySet="LKACSoft_Priority" />
+            <End Role="LKACSoft_Task" EntitySet="LKACSoft_Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Task_LKACSoft_TaskStatus" Association="Self.FK_LKACSoft_Task_LKACSoft_TaskStatus">
+            <End Role="LKACSoft_TaskStatus" EntitySet="LKACSoft_TaskStatus" />
+            <End Role="LKACSoft_Task" EntitySet="LKACSoft_Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Task_LKACSoft_TaskType" Association="Self.FK_LKACSoft_Task_LKACSoft_TaskType">
+            <End Role="LKACSoft_TaskType" EntitySet="LKACSoft_TaskType" />
+            <End Role="LKACSoft_Task" EntitySet="LKACSoft_Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Task_LKACSoft_User_AssignedTo" Association="Self.FK_LKACSoft_Task_LKACSoft_User_AssignedTo">
+            <End Role="LKACSoft_User" EntitySet="LKACSoft_User" />
+            <End Role="LKACSoft_Task" EntitySet="LKACSoft_Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Task_LKACSoft_User_ReviewedBy" Association="Self.FK_LKACSoft_Task_LKACSoft_User_ReviewedBy">
+            <End Role="LKACSoft_User" EntitySet="LKACSoft_User" />
+            <End Role="LKACSoft_Task" EntitySet="LKACSoft_Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskComment_LKACSoft_Task" Association="Self.FK_LKACSoft_TaskComment_LKACSoft_Task">
+            <End Role="LKACSoft_Task" EntitySet="LKACSoft_Task" />
+            <End Role="LKACSoft_TaskComment" EntitySet="LKACSoft_TaskComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskComment_LKACSoft_User" Association="Self.FK_LKACSoft_TaskComment_LKACSoft_User">
+            <End Role="LKACSoft_User" EntitySet="LKACSoft_User" />
+            <End Role="LKACSoft_TaskComment" EntitySet="LKACSoft_TaskComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskTypeResponsiblePosition_LKACSoft_TaskTypeStatus" Association="Self.FK_LKACSoft_TaskTypeResponsiblePosition_LKACSoft_TaskTypeStatus">
+            <End Role="LKACSoft_TaskTypeStatus" EntitySet="LKACSoft_TaskTypeStatus" />
+            <End Role="LKACSoft_TaskTypeResponsiblePosition" EntitySet="LKACSoft_TaskTypeResponsiblePosition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_AssociatedProcessSchemaStatus" Association="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_AssociatedProcessSchemaStatus">
+            <End Role="LKACSoft_ProcessSchemaStatus" EntitySet="LKACSoft_ProcessSchemaStatus" />
+            <End Role="LKACSoft_TaskTypeStatus" EntitySet="LKACSoft_TaskTypeStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_RequiredProcessSchemaStatus" Association="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_RequiredProcessSchemaStatus">
+            <End Role="LKACSoft_ProcessSchemaStatus" EntitySet="LKACSoft_ProcessSchemaStatus" />
+            <End Role="LKACSoft_TaskTypeStatus" EntitySet="LKACSoft_TaskTypeStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskStatus" Association="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskStatus">
+            <End Role="LKACSoft_TaskStatus" EntitySet="LKACSoft_TaskStatus" />
+            <End Role="LKACSoft_TaskTypeStatus" EntitySet="LKACSoft_TaskTypeStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskType" Association="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskType">
+            <End Role="LKACSoft_TaskType" EntitySet="LKACSoft_TaskType" />
+            <End Role="LKACSoft_TaskTypeStatus" EntitySet="LKACSoft_TaskTypeStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_UserPosition_LKACSoft_User" Association="Self.FK_LKACSoft_UserPosition_LKACSoft_User">
+            <End Role="LKACSoft_User" EntitySet="LKACSoft_User" />
+            <End Role="LKACSoft_UserPosition" EntitySet="LKACSoft_UserPosition" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_ab6e43_lkacsoftdbModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="LKACSoft_Priority">
+          <Key>
+            <PropertyRef Name="PriorityID" />
+          </Key>
+          <Property Name="PriorityID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PriorityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DesignatedColor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LKACSoft_Task" Relationship="Self.FK_LKACSoft_Task_LKACSoft_Priority" FromRole="LKACSoft_Priority" ToRole="LKACSoft_Task" />
+        </EntityType>
+        <EntityType Name="LKACSoft_ProcessSchema">
+          <Key>
+            <PropertyRef Name="ProcessSchemaID" />
+          </Key>
+          <Property Name="ProcessSchemaID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedAt" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="LKACSoft_ProcessSchemaStatus" Relationship="Self.FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessSchema" FromRole="LKACSoft_ProcessSchema" ToRole="LKACSoft_ProcessSchemaStatus" />
+        </EntityType>
+        <EntityType Name="LKACSoft_ProcessSchemaStatus">
+          <Key>
+            <PropertyRef Name="ProcessSchemaStatusID" />
+          </Key>
+          <Property Name="ProcessSchemaStatusID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProcessSchema" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="OrderIndex" Type="Int32" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="LKACSoft_ProcessSchema" Relationship="Self.FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessSchema" FromRole="LKACSoft_ProcessSchemaStatus" ToRole="LKACSoft_ProcessSchema" />
+          <NavigationProperty Name="LKACSoft_ProcessStatus" Relationship="Self.FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessStatus" FromRole="LKACSoft_ProcessSchemaStatus" ToRole="LKACSoft_ProcessStatus" />
+          <NavigationProperty Name="LKACSoft_TaskTypeStatus" Relationship="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_AssociatedProcessSchemaStatus" FromRole="LKACSoft_ProcessSchemaStatus" ToRole="LKACSoft_TaskTypeStatus" />
+          <NavigationProperty Name="LKACSoft_TaskTypeStatus1" Relationship="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_RequiredProcessSchemaStatus" FromRole="LKACSoft_ProcessSchemaStatus" ToRole="LKACSoft_TaskTypeStatus" />
+        </EntityType>
+        <EntityType Name="LKACSoft_ProcessStatus">
+          <Key>
+            <PropertyRef Name="ProcessStatusID" />
+          </Key>
+          <Property Name="ProcessStatusID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StatusName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DesignatedColor" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LKACSoft_ProcessSchemaStatus" Relationship="Self.FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessStatus" FromRole="LKACSoft_ProcessStatus" ToRole="LKACSoft_ProcessSchemaStatus" />
+        </EntityType>
+        <EntityType Name="LKACSoft_RequestToCustomerSupport">
+          <Key>
+            <PropertyRef Name="RequestID" />
+          </Key>
+          <Property Name="RequestID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Details" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="createAt" Type="DateTime" Precision="0" />
+          <Property Name="IsFromStaff" Type="Boolean" />
+          <Property Name="StaffID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IsFromCustomer" Type="Boolean" />
+          <Property Name="CustomerID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DateAssigned" Type="DateTime" Precision="0" />
+          <Property Name="DateResolved" Type="DateTime" Precision="0" />
+          <Property Name="DateVerified" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerSupportComment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerSupportID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LKACSoft_User" Relationship="Self.FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_CustomerSupportID" FromRole="LKACSoft_RequestToCustomerSupport" ToRole="LKACSoft_User" />
+          <NavigationProperty Name="LKACSoft_User1" Relationship="Self.FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_StaffID" FromRole="LKACSoft_RequestToCustomerSupport" ToRole="LKACSoft_User" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Task">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateAssigned" Type="DateTime" Precision="0" />
+          <Property Name="TaskDeadline" Type="DateTime" Precision="0" />
+          <Property Name="AssignedTo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TaskStatusID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DateAccepted" Type="DateTime" Precision="0" />
+          <Property Name="DateCompleted" Type="DateTime" Precision="0" />
+          <Property Name="ReviewedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ReviewNote" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="DateReview" Type="DateTime" Precision="0" />
+          <Property Name="IsRetried" Type="Boolean" />
+          <Property Name="RelatedToExecution" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TaskType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DesignatedNumberOfDocument" Type="Int32" />
+          <Property Name="NumberOfCompletedDocument" Type="Int32" />
+          <Property Name="NumberOfRetrievedDocument" Type="Int32" />
+          <Property Name="Priority" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="LKACSoft_Priority" Relationship="Self.FK_LKACSoft_Task_LKACSoft_Priority" FromRole="LKACSoft_Task" ToRole="LKACSoft_Priority" />
+          <NavigationProperty Name="LKACSoft_TaskStatus" Relationship="Self.FK_LKACSoft_Task_LKACSoft_TaskStatus" FromRole="LKACSoft_Task" ToRole="LKACSoft_TaskStatus" />
+          <NavigationProperty Name="LKACSoft_TaskType" Relationship="Self.FK_LKACSoft_Task_LKACSoft_TaskType" FromRole="LKACSoft_Task" ToRole="LKACSoft_TaskType" />
+          <NavigationProperty Name="LKACSoft_User" Relationship="Self.FK_LKACSoft_Task_LKACSoft_User_AssignedTo" FromRole="LKACSoft_Task" ToRole="LKACSoft_User" />
+          <NavigationProperty Name="LKACSoft_User1" Relationship="Self.FK_LKACSoft_Task_LKACSoft_User_ReviewedBy" FromRole="LKACSoft_Task" ToRole="LKACSoft_User" />
+          <NavigationProperty Name="LKACSoft_TaskComment" Relationship="Self.FK_LKACSoft_TaskComment_LKACSoft_Task" FromRole="LKACSoft_Task" ToRole="LKACSoft_TaskComment" />
+        </EntityType>
+        <EntityType Name="LKACSoft_TaskComment">
+          <Key>
+            <PropertyRef Name="CommentID" />
+          </Key>
+          <Property Name="CommentID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaskID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CommentedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="createdAt" Type="DateTime" Precision="0" />
+          <Property Name="updatedAt" Type="DateTime" Precision="0" />
+          <Property Name="Details" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LKACSoft_Task" Relationship="Self.FK_LKACSoft_TaskComment_LKACSoft_Task" FromRole="LKACSoft_TaskComment" ToRole="LKACSoft_Task" />
+          <NavigationProperty Name="LKACSoft_User" Relationship="Self.FK_LKACSoft_TaskComment_LKACSoft_User" FromRole="LKACSoft_TaskComment" ToRole="LKACSoft_User" />
+        </EntityType>
+        <EntityType Name="LKACSoft_TaskStatus">
+          <Key>
+            <PropertyRef Name="TaskStatusID" />
+          </Key>
+          <Property Name="TaskStatusID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaskStatusName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DesignatedColor" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LKACSoft_Task" Relationship="Self.FK_LKACSoft_Task_LKACSoft_TaskStatus" FromRole="LKACSoft_TaskStatus" ToRole="LKACSoft_Task" />
+          <NavigationProperty Name="LKACSoft_TaskTypeStatus" Relationship="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskStatus" FromRole="LKACSoft_TaskStatus" ToRole="LKACSoft_TaskTypeStatus" />
+        </EntityType>
+        <EntityType Name="LKACSoft_TaskType">
+          <Key>
+            <PropertyRef Name="TaskTypeID" />
+          </Key>
+          <Property Name="TaskTypeID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaskTypeName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="TaskTypeDesignatedColor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LKACSoft_Task" Relationship="Self.FK_LKACSoft_Task_LKACSoft_TaskType" FromRole="LKACSoft_TaskType" ToRole="LKACSoft_Task" />
+          <NavigationProperty Name="LKACSoft_TaskTypeStatus" Relationship="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskType" FromRole="LKACSoft_TaskType" ToRole="LKACSoft_TaskTypeStatus" />
+        </EntityType>
+        <EntityType Name="LKACSoft_TaskTypeResponsiblePosition">
+          <Key>
+            <PropertyRef Name="TaskStatusID" />
+            <PropertyRef Name="TaskTypeID" />
+            <PropertyRef Name="PositionCode" />
+          </Key>
+          <Property Name="TaskStatusID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaskTypeID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PositionCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LKACSoft_TaskTypeStatus" Relationship="Self.FK_LKACSoft_TaskTypeResponsiblePosition_LKACSoft_TaskTypeStatus" FromRole="LKACSoft_TaskTypeResponsiblePosition" ToRole="LKACSoft_TaskTypeStatus" />
+        </EntityType>
+        <EntityType Name="LKACSoft_TaskTypeStatus">
+          <Key>
+            <PropertyRef Name="TaskStatusID" />
+            <PropertyRef Name="TaskTypeID" />
+          </Key>
+          <Property Name="TaskStatusID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TaskTypeID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AssociatedProcessSchemaStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RequiredProcessSchemaStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LKACSoft_ProcessSchemaStatus" Relationship="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_AssociatedProcessSchemaStatus" FromRole="LKACSoft_TaskTypeStatus" ToRole="LKACSoft_ProcessSchemaStatus" />
+          <NavigationProperty Name="LKACSoft_ProcessSchemaStatus1" Relationship="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_RequiredProcessSchemaStatus" FromRole="LKACSoft_TaskTypeStatus" ToRole="LKACSoft_ProcessSchemaStatus" />
+          <NavigationProperty Name="LKACSoft_TaskStatus" Relationship="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskStatus" FromRole="LKACSoft_TaskTypeStatus" ToRole="LKACSoft_TaskStatus" />
+          <NavigationProperty Name="LKACSoft_TaskType" Relationship="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskType" FromRole="LKACSoft_TaskTypeStatus" ToRole="LKACSoft_TaskType" />
+          <NavigationProperty Name="LKACSoft_TaskTypeResponsiblePosition" Relationship="Self.FK_LKACSoft_TaskTypeResponsiblePosition_LKACSoft_TaskTypeStatus" FromRole="LKACSoft_TaskTypeStatus" ToRole="LKACSoft_TaskTypeResponsiblePosition" />
+        </EntityType>
+        <EntityType Name="LKACSoft_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Firstname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="District" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Dob" Type="DateTime" Precision="0" />
+          <Property Name="IsQuitJob" Type="Boolean" />
+          <Property Name="DateCreate" Type="DateTime" Precision="0" />
+          <Property Name="Team" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LKACSoft_RequestToCustomerSupport" Relationship="Self.FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_CustomerSupportID" FromRole="LKACSoft_User" ToRole="LKACSoft_RequestToCustomerSupport" />
+          <NavigationProperty Name="LKACSoft_RequestToCustomerSupport1" Relationship="Self.FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_StaffID" FromRole="LKACSoft_User" ToRole="LKACSoft_RequestToCustomerSupport" />
+          <NavigationProperty Name="LKACSoft_Task" Relationship="Self.FK_LKACSoft_Task_LKACSoft_User_AssignedTo" FromRole="LKACSoft_User" ToRole="LKACSoft_Task" />
+          <NavigationProperty Name="LKACSoft_Task1" Relationship="Self.FK_LKACSoft_Task_LKACSoft_User_ReviewedBy" FromRole="LKACSoft_User" ToRole="LKACSoft_Task" />
+          <NavigationProperty Name="LKACSoft_TaskComment" Relationship="Self.FK_LKACSoft_TaskComment_LKACSoft_User" FromRole="LKACSoft_User" ToRole="LKACSoft_TaskComment" />
+          <NavigationProperty Name="LKACSoft_UserPosition" Relationship="Self.FK_LKACSoft_UserPosition_LKACSoft_User" FromRole="LKACSoft_User" ToRole="LKACSoft_UserPosition" />
+        </EntityType>
+        <EntityType Name="LKACSoft_UserPosition">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="LKACSoft_PositionCode" />
+            <PropertyRef Name="LKACSoft_DepartmentCode" />
+          </Key>
+          <Property Name="UserID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AssignedDate" Type="DateTime" Precision="0" />
+          <Property Name="LKACSoft_PositionCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LKACSoft_DepartmentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LKACSoft_User" Relationship="Self.FK_LKACSoft_UserPosition_LKACSoft_User" FromRole="LKACSoft_UserPosition" ToRole="LKACSoft_User" />
+        </EntityType>
+        <Association Name="FK_LKACSoft_Task_LKACSoft_Priority">
+          <End Role="LKACSoft_Priority" Type="Self.LKACSoft_Priority" Multiplicity="0..1" />
+          <End Role="LKACSoft_Task" Type="Self.LKACSoft_Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Priority">
+              <PropertyRef Name="PriorityID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Task">
+              <PropertyRef Name="Priority" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessSchema">
+          <End Role="LKACSoft_ProcessSchema" Type="Self.LKACSoft_ProcessSchema" Multiplicity="0..1" />
+          <End Role="LKACSoft_ProcessSchemaStatus" Type="Self.LKACSoft_ProcessSchemaStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_ProcessSchema">
+              <PropertyRef Name="ProcessSchemaID" />
+            </Principal>
+            <Dependent Role="LKACSoft_ProcessSchemaStatus">
+              <PropertyRef Name="ProcessSchema" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessStatus">
+          <End Role="LKACSoft_ProcessStatus" Type="Self.LKACSoft_ProcessStatus" Multiplicity="0..1" />
+          <End Role="LKACSoft_ProcessSchemaStatus" Type="Self.LKACSoft_ProcessSchemaStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_ProcessStatus">
+              <PropertyRef Name="ProcessStatusID" />
+            </Principal>
+            <Dependent Role="LKACSoft_ProcessSchemaStatus">
+              <PropertyRef Name="ProcessStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_AssociatedProcessSchemaStatus">
+          <End Role="LKACSoft_ProcessSchemaStatus" Type="Self.LKACSoft_ProcessSchemaStatus" Multiplicity="0..1" />
+          <End Role="LKACSoft_TaskTypeStatus" Type="Self.LKACSoft_TaskTypeStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_ProcessSchemaStatus">
+              <PropertyRef Name="ProcessSchemaStatusID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskTypeStatus">
+              <PropertyRef Name="AssociatedProcessSchemaStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_RequiredProcessSchemaStatus">
+          <End Role="LKACSoft_ProcessSchemaStatus" Type="Self.LKACSoft_ProcessSchemaStatus" Multiplicity="0..1" />
+          <End Role="LKACSoft_TaskTypeStatus" Type="Self.LKACSoft_TaskTypeStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_ProcessSchemaStatus">
+              <PropertyRef Name="ProcessSchemaStatusID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskTypeStatus">
+              <PropertyRef Name="RequiredProcessSchemaStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_CustomerSupportID">
+          <End Role="LKACSoft_User" Type="Self.LKACSoft_User" Multiplicity="0..1" />
+          <End Role="LKACSoft_RequestToCustomerSupport" Type="Self.LKACSoft_RequestToCustomerSupport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LKACSoft_RequestToCustomerSupport">
+              <PropertyRef Name="CustomerSupportID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_StaffID">
+          <End Role="LKACSoft_User" Type="Self.LKACSoft_User" Multiplicity="0..1" />
+          <End Role="LKACSoft_RequestToCustomerSupport" Type="Self.LKACSoft_RequestToCustomerSupport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LKACSoft_RequestToCustomerSupport">
+              <PropertyRef Name="StaffID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Task_LKACSoft_TaskStatus">
+          <End Role="LKACSoft_TaskStatus" Type="Self.LKACSoft_TaskStatus" Multiplicity="0..1" />
+          <End Role="LKACSoft_Task" Type="Self.LKACSoft_Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_TaskStatus">
+              <PropertyRef Name="TaskStatusID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Task">
+              <PropertyRef Name="TaskStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Task_LKACSoft_TaskType">
+          <End Role="LKACSoft_TaskType" Type="Self.LKACSoft_TaskType" Multiplicity="0..1" />
+          <End Role="LKACSoft_Task" Type="Self.LKACSoft_Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_TaskType">
+              <PropertyRef Name="TaskTypeID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Task">
+              <PropertyRef Name="TaskType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Task_LKACSoft_User_AssignedTo">
+          <End Role="LKACSoft_User" Type="Self.LKACSoft_User" Multiplicity="0..1" />
+          <End Role="LKACSoft_Task" Type="Self.LKACSoft_Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Task">
+              <PropertyRef Name="AssignedTo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Task_LKACSoft_User_ReviewedBy">
+          <End Role="LKACSoft_User" Type="Self.LKACSoft_User" Multiplicity="0..1" />
+          <End Role="LKACSoft_Task" Type="Self.LKACSoft_Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Task">
+              <PropertyRef Name="ReviewedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskComment_LKACSoft_Task">
+          <End Role="LKACSoft_Task" Type="Self.LKACSoft_Task" Multiplicity="0..1" />
+          <End Role="LKACSoft_TaskComment" Type="Self.LKACSoft_TaskComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Task">
+              <PropertyRef Name="TaskID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskComment">
+              <PropertyRef Name="TaskID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskComment_LKACSoft_User">
+          <End Role="LKACSoft_User" Type="Self.LKACSoft_User" Multiplicity="0..1" />
+          <End Role="LKACSoft_TaskComment" Type="Self.LKACSoft_TaskComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskComment">
+              <PropertyRef Name="CommentedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskStatus">
+          <End Role="LKACSoft_TaskStatus" Type="Self.LKACSoft_TaskStatus" Multiplicity="1" />
+          <End Role="LKACSoft_TaskTypeStatus" Type="Self.LKACSoft_TaskTypeStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_TaskStatus">
+              <PropertyRef Name="TaskStatusID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskTypeStatus">
+              <PropertyRef Name="TaskStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskType">
+          <End Role="LKACSoft_TaskType" Type="Self.LKACSoft_TaskType" Multiplicity="1" />
+          <End Role="LKACSoft_TaskTypeStatus" Type="Self.LKACSoft_TaskTypeStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_TaskType">
+              <PropertyRef Name="TaskTypeID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskTypeStatus">
+              <PropertyRef Name="TaskTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_TaskTypeResponsiblePosition_LKACSoft_TaskTypeStatus">
+          <End Role="LKACSoft_TaskTypeStatus" Type="Self.LKACSoft_TaskTypeStatus" Multiplicity="1" />
+          <End Role="LKACSoft_TaskTypeResponsiblePosition" Type="Self.LKACSoft_TaskTypeResponsiblePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_TaskTypeStatus">
+              <PropertyRef Name="TaskStatusID" />
+              <PropertyRef Name="TaskTypeID" />
+            </Principal>
+            <Dependent Role="LKACSoft_TaskTypeResponsiblePosition">
+              <PropertyRef Name="TaskStatusID" />
+              <PropertyRef Name="TaskTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_UserPosition_LKACSoft_User">
+          <End Role="LKACSoft_User" Type="Self.LKACSoft_User" Multiplicity="1" />
+          <End Role="LKACSoft_UserPosition" Type="Self.LKACSoft_UserPosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LKACSoft_UserPosition">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_ab6e43_lkacsoftdbEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LKACSoft_Priority" EntityType="Self.LKACSoft_Priority" />
+          <EntitySet Name="LKACSoft_ProcessSchema" EntityType="Self.LKACSoft_ProcessSchema" />
+          <EntitySet Name="LKACSoft_ProcessSchemaStatus" EntityType="Self.LKACSoft_ProcessSchemaStatus" />
+          <EntitySet Name="LKACSoft_ProcessStatus" EntityType="Self.LKACSoft_ProcessStatus" />
+          <EntitySet Name="LKACSoft_RequestToCustomerSupport" EntityType="Self.LKACSoft_RequestToCustomerSupport" />
+          <EntitySet Name="LKACSoft_Task" EntityType="Self.LKACSoft_Task" />
+          <EntitySet Name="LKACSoft_TaskComment" EntityType="Self.LKACSoft_TaskComment" />
+          <EntitySet Name="LKACSoft_TaskStatus" EntityType="Self.LKACSoft_TaskStatus" />
+          <EntitySet Name="LKACSoft_TaskType" EntityType="Self.LKACSoft_TaskType" />
+          <EntitySet Name="LKACSoft_TaskTypeResponsiblePosition" EntityType="Self.LKACSoft_TaskTypeResponsiblePosition" />
+          <EntitySet Name="LKACSoft_TaskTypeStatus" EntityType="Self.LKACSoft_TaskTypeStatus" />
+          <EntitySet Name="LKACSoft_User" EntityType="Self.LKACSoft_User" />
+          <EntitySet Name="LKACSoft_UserPosition" EntityType="Self.LKACSoft_UserPosition" />
+          <AssociationSet Name="FK_LKACSoft_Task_LKACSoft_Priority" Association="Self.FK_LKACSoft_Task_LKACSoft_Priority">
+            <End Role="LKACSoft_Priority" EntitySet="LKACSoft_Priority" />
+            <End Role="LKACSoft_Task" EntitySet="LKACSoft_Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessSchema" Association="Self.FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessSchema">
+            <End Role="LKACSoft_ProcessSchema" EntitySet="LKACSoft_ProcessSchema" />
+            <End Role="LKACSoft_ProcessSchemaStatus" EntitySet="LKACSoft_ProcessSchemaStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessStatus" Association="Self.FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessStatus">
+            <End Role="LKACSoft_ProcessStatus" EntitySet="LKACSoft_ProcessStatus" />
+            <End Role="LKACSoft_ProcessSchemaStatus" EntitySet="LKACSoft_ProcessSchemaStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_AssociatedProcessSchemaStatus" Association="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_AssociatedProcessSchemaStatus">
+            <End Role="LKACSoft_ProcessSchemaStatus" EntitySet="LKACSoft_ProcessSchemaStatus" />
+            <End Role="LKACSoft_TaskTypeStatus" EntitySet="LKACSoft_TaskTypeStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_RequiredProcessSchemaStatus" Association="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_RequiredProcessSchemaStatus">
+            <End Role="LKACSoft_ProcessSchemaStatus" EntitySet="LKACSoft_ProcessSchemaStatus" />
+            <End Role="LKACSoft_TaskTypeStatus" EntitySet="LKACSoft_TaskTypeStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_CustomerSupportID" Association="Self.FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_CustomerSupportID">
+            <End Role="LKACSoft_User" EntitySet="LKACSoft_User" />
+            <End Role="LKACSoft_RequestToCustomerSupport" EntitySet="LKACSoft_RequestToCustomerSupport" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_StaffID" Association="Self.FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_StaffID">
+            <End Role="LKACSoft_User" EntitySet="LKACSoft_User" />
+            <End Role="LKACSoft_RequestToCustomerSupport" EntitySet="LKACSoft_RequestToCustomerSupport" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Task_LKACSoft_TaskStatus" Association="Self.FK_LKACSoft_Task_LKACSoft_TaskStatus">
+            <End Role="LKACSoft_TaskStatus" EntitySet="LKACSoft_TaskStatus" />
+            <End Role="LKACSoft_Task" EntitySet="LKACSoft_Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Task_LKACSoft_TaskType" Association="Self.FK_LKACSoft_Task_LKACSoft_TaskType">
+            <End Role="LKACSoft_TaskType" EntitySet="LKACSoft_TaskType" />
+            <End Role="LKACSoft_Task" EntitySet="LKACSoft_Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Task_LKACSoft_User_AssignedTo" Association="Self.FK_LKACSoft_Task_LKACSoft_User_AssignedTo">
+            <End Role="LKACSoft_User" EntitySet="LKACSoft_User" />
+            <End Role="LKACSoft_Task" EntitySet="LKACSoft_Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Task_LKACSoft_User_ReviewedBy" Association="Self.FK_LKACSoft_Task_LKACSoft_User_ReviewedBy">
+            <End Role="LKACSoft_User" EntitySet="LKACSoft_User" />
+            <End Role="LKACSoft_Task" EntitySet="LKACSoft_Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskComment_LKACSoft_Task" Association="Self.FK_LKACSoft_TaskComment_LKACSoft_Task">
+            <End Role="LKACSoft_Task" EntitySet="LKACSoft_Task" />
+            <End Role="LKACSoft_TaskComment" EntitySet="LKACSoft_TaskComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskComment_LKACSoft_User" Association="Self.FK_LKACSoft_TaskComment_LKACSoft_User">
+            <End Role="LKACSoft_User" EntitySet="LKACSoft_User" />
+            <End Role="LKACSoft_TaskComment" EntitySet="LKACSoft_TaskComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskStatus" Association="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskStatus">
+            <End Role="LKACSoft_TaskStatus" EntitySet="LKACSoft_TaskStatus" />
+            <End Role="LKACSoft_TaskTypeStatus" EntitySet="LKACSoft_TaskTypeStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskType" Association="Self.FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskType">
+            <End Role="LKACSoft_TaskType" EntitySet="LKACSoft_TaskType" />
+            <End Role="LKACSoft_TaskTypeStatus" EntitySet="LKACSoft_TaskTypeStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_TaskTypeResponsiblePosition_LKACSoft_TaskTypeStatus" Association="Self.FK_LKACSoft_TaskTypeResponsiblePosition_LKACSoft_TaskTypeStatus">
+            <End Role="LKACSoft_TaskTypeStatus" EntitySet="LKACSoft_TaskTypeStatus" />
+            <End Role="LKACSoft_TaskTypeResponsiblePosition" EntitySet="LKACSoft_TaskTypeResponsiblePosition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_UserPosition_LKACSoft_User" Association="Self.FK_LKACSoft_UserPosition_LKACSoft_User">
+            <End Role="LKACSoft_User" EntitySet="LKACSoft_User" />
+            <End Role="LKACSoft_UserPosition" EntitySet="LKACSoft_UserPosition" />
+          </AssociationSet>
+          <EntitySet Name="LKACSoft_LendDocument" EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_LendDocument" />
+          <EntitySet Name="LKACSoft_AccountingStatus" EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_AccountingStatus" />
+          <EntitySet Name="LKACSoft_ArchivingStatus" EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_ArchivingStatus" />
+        </EntityContainer>
+        <EntityType Name="LKACSoft_LendDocument">
+          <Key>
+            <PropertyRef Name="DocumentLendID" />
+            <PropertyRef Name="FileCode" />
+          </Key>
+          <Property Name="DocumentLendID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FileCode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LKACSoft_AccountingStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LKACSoft_ArchivingStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_ab6e43_lkacsoftdbModel2StoreContainer" CdmEntityContainer="db_ab6e43_lkacsoftdbEntities2">
+          <EntitySetMapping Name="LKACSoft_Priority">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_Priority">
+              <MappingFragment StoreEntitySet="LKACSoft_Priority">
+                <ScalarProperty Name="PriorityID" ColumnName="PriorityID" />
+                <ScalarProperty Name="PriorityName" ColumnName="PriorityName" />
+                <ScalarProperty Name="DesignatedColor" ColumnName="DesignatedColor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_ProcessSchema">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_ProcessSchema">
+              <MappingFragment StoreEntitySet="LKACSoft_ProcessSchema">
+                <ScalarProperty Name="ProcessSchemaID" ColumnName="ProcessSchemaID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_ProcessSchemaStatus">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_ProcessSchemaStatus">
+              <MappingFragment StoreEntitySet="LKACSoft_ProcessSchemaStatus">
+                <ScalarProperty Name="ProcessSchemaStatusID" ColumnName="ProcessSchemaStatusID" />
+                <ScalarProperty Name="ProcessSchema" ColumnName="ProcessSchema" />
+                <ScalarProperty Name="ProcessStatus" ColumnName="ProcessStatus" />
+                <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_ProcessStatus">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_ProcessStatus">
+              <MappingFragment StoreEntitySet="LKACSoft_ProcessStatus">
+                <ScalarProperty Name="ProcessStatusID" ColumnName="ProcessStatusID" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="DesignatedColor" ColumnName="DesignatedColor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_RequestToCustomerSupport">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_RequestToCustomerSupport">
+              <MappingFragment StoreEntitySet="LKACSoft_RequestToCustomerSupport">
+                <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="createAt" ColumnName="createAt" />
+                <ScalarProperty Name="IsFromStaff" ColumnName="IsFromStaff" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="IsFromCustomer" ColumnName="IsFromCustomer" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="DateAssigned" ColumnName="DateAssigned" />
+                <ScalarProperty Name="DateResolved" ColumnName="DateResolved" />
+                <ScalarProperty Name="DateVerified" ColumnName="DateVerified" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CustomerSupportComment" ColumnName="CustomerSupportComment" />
+                <ScalarProperty Name="CustomerSupportID" ColumnName="CustomerSupportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_Task">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_Task">
+              <MappingFragment StoreEntitySet="LKACSoft_Task">
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="DateAssigned" ColumnName="DateAssigned" />
+                <ScalarProperty Name="TaskDeadline" ColumnName="TaskDeadline" />
+                <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="TaskStatusID" ColumnName="TaskStatusID" />
+                <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+                <ScalarProperty Name="DateCompleted" ColumnName="DateCompleted" />
+                <ScalarProperty Name="ReviewedBy" ColumnName="ReviewedBy" />
+                <ScalarProperty Name="ReviewNote" ColumnName="ReviewNote" />
+                <ScalarProperty Name="DateReview" ColumnName="DateReview" />
+                <ScalarProperty Name="IsRetried" ColumnName="IsRetried" />
+                <ScalarProperty Name="RelatedToExecution" ColumnName="RelatedToExecution" />
+                <ScalarProperty Name="TaskType" ColumnName="TaskType" />
+                <ScalarProperty Name="DesignatedNumberOfDocument" ColumnName="DesignatedNumberOfDocument" />
+                <ScalarProperty Name="NumberOfCompletedDocument" ColumnName="NumberOfCompletedDocument" />
+                <ScalarProperty Name="NumberOfRetrievedDocument" ColumnName="NumberOfRetrievedDocument" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_TaskComment">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_TaskComment">
+              <MappingFragment StoreEntitySet="LKACSoft_TaskComment">
+                <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="CommentedBy" ColumnName="CommentedBy" />
+                <ScalarProperty Name="createdAt" ColumnName="createdAt" />
+                <ScalarProperty Name="updatedAt" ColumnName="updatedAt" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_TaskStatus">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_TaskStatus">
+              <MappingFragment StoreEntitySet="LKACSoft_TaskStatus">
+                <ScalarProperty Name="TaskStatusID" ColumnName="TaskStatusID" />
+                <ScalarProperty Name="TaskStatusName" ColumnName="TaskStatusName" />
+                <ScalarProperty Name="DesignatedColor" ColumnName="DesignatedColor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_TaskType">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_TaskType">
+              <MappingFragment StoreEntitySet="LKACSoft_TaskType">
+                <ScalarProperty Name="TaskTypeID" ColumnName="TaskTypeID" />
+                <ScalarProperty Name="TaskTypeName" ColumnName="TaskTypeName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TaskTypeDesignatedColor" ColumnName="TaskTypeDesignatedColor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_TaskTypeResponsiblePosition">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_TaskTypeResponsiblePosition">
+              <MappingFragment StoreEntitySet="LKACSoft_TaskTypeResponsiblePosition">
+                <ScalarProperty Name="TaskStatusID" ColumnName="TaskStatusID" />
+                <ScalarProperty Name="TaskTypeID" ColumnName="TaskTypeID" />
+                <ScalarProperty Name="PositionCode" ColumnName="PositionCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_TaskTypeStatus">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_TaskTypeStatus">
+              <MappingFragment StoreEntitySet="LKACSoft_TaskTypeStatus">
+                <ScalarProperty Name="TaskStatusID" ColumnName="TaskStatusID" />
+                <ScalarProperty Name="TaskTypeID" ColumnName="TaskTypeID" />
+                <ScalarProperty Name="AssociatedProcessSchemaStatus" ColumnName="AssociatedProcessSchemaStatus" />
+                <ScalarProperty Name="RequiredProcessSchemaStatus" ColumnName="RequiredProcessSchemaStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_User">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_User">
+              <MappingFragment StoreEntitySet="LKACSoft_User">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Dob" ColumnName="Dob" />
+                <ScalarProperty Name="IsQuitJob" ColumnName="IsQuitJob" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="Team" ColumnName="Team" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_UserPosition">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_UserPosition">
+              <MappingFragment StoreEntitySet="LKACSoft_UserPosition">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="AssignedDate" ColumnName="AssignedDate" />
+                <ScalarProperty Name="LKACSoft_PositionCode" ColumnName="LKACSoft_PositionCode" />
+                <ScalarProperty Name="LKACSoft_DepartmentCode" ColumnName="LKACSoft_DepartmentCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_LendDocument">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_LendDocument">
+              <MappingFragment StoreEntitySet="LKACSoft_LendDocument">
+                <ScalarProperty Name="FileCode" ColumnName="FileCode" />
+                <ScalarProperty Name="DocumentLendID" ColumnName="DocumentLendID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_AccountingStatus">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_AccountingStatus">
+              <MappingFragment StoreEntitySet="LKACSoft_AccountingStatus">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_ArchivingStatus">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel2.LKACSoft_ArchivingStatus">
+              <MappingFragment StoreEntitySet="LKACSoft_ArchivingStatus">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

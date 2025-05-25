@@ -1,0 +1,868 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="db_ab6e43_lkacsoftdbModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LKACSoft_AccountantTeam">
+          <Key>
+            <PropertyRef Name="TeamID" />
+          </Key>
+          <Property Name="TeamID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TeamName" Type="nvarchar" MaxLength="255" />
+          <Property Name="TeamLeader" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Customer">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="LogoS3Key" Type="varchar" MaxLength="255" />
+          <Property Name="FilterLocation" Type="nvarchar" MaxLength="255" />
+          <Property Name="GetDocsDate" Type="int" />
+          <Property Name="DateCreate" Type="date" />
+          <Property Name="Suspended" Type="bit" />
+          <Property Name="SuspendedTo" Type="date" />
+          <Property Name="Dissolved" Type="bit" />
+          <Property Name="DissolvedDate" Type="date" />
+          <Property Name="MainAccountant" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+          <Property Name="AssignedToCustomerSupport" Type="varchar" MaxLength="255" />
+          <Property Name="ResponsibleAccountantTeam" Type="varchar" MaxLength="255" />
+          <Property Name="LKACSoft_DepartmentCode" Type="varchar" MaxLength="10" />
+          <Property Name="ContractExpiry" Type="date" />
+          <Property Name="ContractSignedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="LKACSoft_CustomerDocumentType">
+          <Key>
+            <PropertyRef Name="CustomerCode" />
+            <PropertyRef Name="DocumentTypeID" />
+          </Key>
+          <Property Name="CustomerCode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocumentTypeID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocumentReceivingMechanism" Type="nvarchar" MaxLength="255" />
+          <Property Name="AvgAmount" Type="int" />
+          <Property Name="RegisteredAmount" Type="int" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Department">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="DisplayOrder" Type="int" />
+          <Property Name="Closed" Type="bit" />
+        </EntityType>
+        <EntityType Name="LKACSoft_DocumentLendingHistory">
+          <Key>
+            <PropertyRef Name="DocumentLendID" />
+          </Key>
+          <Property Name="DocumentLendID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LendExpiry" Type="date" />
+          <Property Name="LendDate" Type="date" />
+          <Property Name="ReturnedDate" Type="date" />
+          <Property Name="LendStatus" Type="nvarchar" MaxLength="255" />
+          <Property Name="LendDocument" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LKACSoft_DocumentType">
+          <Key>
+            <PropertyRef Name="DocumentTypeID" />
+          </Key>
+          <Property Name="DocumentTypeID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DocumentTypeName" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Execution">
+          <Key>
+            <PropertyRef Name="ExecutionID" />
+          </Key>
+          <Property Name="ExecutionID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ExecutionName" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+          <Property Name="DateCreated" Type="date" />
+          <Property Name="IsPeriodic" Type="bit" />
+          <Property Name="ProcessSchemaStatus" Type="varchar" MaxLength="255" />
+          <Property Name="ProcessSchemaID" Type="varchar" MaxLength="255" />
+          <Property Name="RelatedToCustomer" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Feedback">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FromWhoCode" Type="int" />
+          <Property Name="ToWhomCode" Type="int" />
+          <Property Name="FromCustomer" Type="bit" />
+          <Property Name="ToCustomer" Type="bit" />
+          <Property Name="FeedbackMsg" Type="nvarchar" MaxLength="2048" />
+          <Property Name="DateFeedback" Type="date" />
+          <Property Name="ExecutionID" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LKACSoft_JobTaskFile">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="255" />
+          <Property Name="FileType" Type="nvarchar" MaxLength="255" />
+          <Property Name="FileS3Key" Type="varchar" MaxLength="255" />
+          <Property Name="CreatedAt" Type="date" />
+          <Property Name="AccountantID" Type="varchar" MaxLength="255" />
+          <Property Name="AccountingStatus" Type="int" />
+          <Property Name="AccountantReceivedAt" Type="date" />
+          <Property Name="ReadyToBeReturnedAt" Type="date" />
+          <Property Name="ArchivingStatus" Type="int" />
+          <Property Name="PhysicalLocation" Type="nvarchar" MaxLength="255" />
+          <Property Name="ArchivedDate" Type="date" />
+          <Property Name="ReturnedDate" Type="date" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="255" />
+          <Property Name="RelatedToExecution" Type="varchar" MaxLength="255" />
+          <Property Name="DocumentType" Type="varchar" MaxLength="255" />
+          <Property Name="CustomerCode" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Notification">
+          <Key>
+            <PropertyRef Name="NotificationID" />
+          </Key>
+          <Property Name="NotificationID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Detail" Type="nvarchar" MaxLength="255" />
+          <Property Name="UserCreate" Type="varchar" MaxLength="255" />
+          <Property Name="DateCreated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Position">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="DisplayOrder" Type="int" />
+        </EntityType>
+        <EntityType Name="LKACSoft_RolePosition">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LKACSoft_PositionCode" Type="char" MaxLength="2" />
+          <Property Name="LKACSoft_DepartmentCode" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="LKACSoft_UserNotification">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="NotificationID" />
+          </Key>
+          <Property Name="UserID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="NotificationID" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_LKACSoft_Customer_LKACSoft_AccountantTeam">
+          <End Role="LKACSoft_AccountantTeam" Type="Self.LKACSoft_AccountantTeam" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LKACSoft_Customer" Type="Self.LKACSoft_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_AccountantTeam">
+              <PropertyRef Name="TeamID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Customer">
+              <PropertyRef Name="ResponsibleAccountantTeam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Customer_LKACSoft_Department">
+          <End Role="LKACSoft_Department" Type="Self.LKACSoft_Department" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LKACSoft_Customer" Type="Self.LKACSoft_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Department">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="LKACSoft_Customer">
+              <PropertyRef Name="LKACSoft_DepartmentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Execution_LKACSoft_Customer">
+          <End Role="LKACSoft_Customer" Type="Self.LKACSoft_Customer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LKACSoft_Execution" Type="Self.LKACSoft_Execution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Customer">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="LKACSoft_Execution">
+              <PropertyRef Name="RelatedToCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Feedback_LKACSoft_Execution">
+          <End Role="LKACSoft_Execution" Type="Self.LKACSoft_Execution" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LKACSoft_Feedback" Type="Self.LKACSoft_Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Execution">
+              <PropertyRef Name="ExecutionID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Feedback">
+              <PropertyRef Name="ExecutionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_JobTaskFile_LKACSoft_CustomerDocumentType">
+          <End Role="LKACSoft_CustomerDocumentType" Type="Self.LKACSoft_CustomerDocumentType" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LKACSoft_JobTaskFile" Type="Self.LKACSoft_JobTaskFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_CustomerDocumentType">
+              <PropertyRef Name="CustomerCode" />
+              <PropertyRef Name="DocumentTypeID" />
+            </Principal>
+            <Dependent Role="LKACSoft_JobTaskFile">
+              <PropertyRef Name="CustomerCode" />
+              <PropertyRef Name="DocumentType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_JobTaskFile_LKACSoft_Execution">
+          <End Role="LKACSoft_Execution" Type="Self.LKACSoft_Execution" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LKACSoft_JobTaskFile" Type="Self.LKACSoft_JobTaskFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Execution">
+              <PropertyRef Name="ExecutionID" />
+            </Principal>
+            <Dependent Role="LKACSoft_JobTaskFile">
+              <PropertyRef Name="RelatedToExecution" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_RolePosition_LKACSoft_Department">
+          <End Role="LKACSoft_Department" Type="Self.LKACSoft_Department" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LKACSoft_RolePosition" Type="Self.LKACSoft_RolePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Department">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="LKACSoft_RolePosition">
+              <PropertyRef Name="LKACSoft_DepartmentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_RolePosition_Position">
+          <End Role="LKACSoft_Position" Type="Self.LKACSoft_Position" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LKACSoft_RolePosition" Type="Self.LKACSoft_RolePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Position">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="LKACSoft_RolePosition">
+              <PropertyRef Name="LKACSoft_PositionCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_UserNotification_LKACSoft_Notification">
+          <End Role="LKACSoft_Notification" Type="Self.LKACSoft_Notification" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="LKACSoft_UserNotification" Type="Self.LKACSoft_UserNotification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Notification">
+              <PropertyRef Name="NotificationID" />
+            </Principal>
+            <Dependent Role="LKACSoft_UserNotification">
+              <PropertyRef Name="NotificationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_ab6e43_lkacsoftdbModel1StoreContainer">
+          <EntitySet Name="LKACSoft_AccountantTeam" EntityType="Self.LKACSoft_AccountantTeam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_Customer" EntityType="Self.LKACSoft_Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_CustomerDocumentType" EntityType="Self.LKACSoft_CustomerDocumentType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_Department" EntityType="Self.LKACSoft_Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_DocumentLendingHistory" EntityType="Self.LKACSoft_DocumentLendingHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_DocumentType" EntityType="Self.LKACSoft_DocumentType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_Execution" EntityType="Self.LKACSoft_Execution" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_Feedback" EntityType="Self.LKACSoft_Feedback" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_JobTaskFile" EntityType="Self.LKACSoft_JobTaskFile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_Notification" EntityType="Self.LKACSoft_Notification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_Position" EntityType="Self.LKACSoft_Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_RolePosition" EntityType="Self.LKACSoft_RolePosition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LKACSoft_UserNotification" EntityType="Self.LKACSoft_UserNotification" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_LKACSoft_Customer_LKACSoft_AccountantTeam" Association="Self.FK_LKACSoft_Customer_LKACSoft_AccountantTeam">
+            <End Role="LKACSoft_AccountantTeam" EntitySet="LKACSoft_AccountantTeam" />
+            <End Role="LKACSoft_Customer" EntitySet="LKACSoft_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Customer_LKACSoft_Department" Association="Self.FK_LKACSoft_Customer_LKACSoft_Department">
+            <End Role="LKACSoft_Department" EntitySet="LKACSoft_Department" />
+            <End Role="LKACSoft_Customer" EntitySet="LKACSoft_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Execution_LKACSoft_Customer" Association="Self.FK_LKACSoft_Execution_LKACSoft_Customer">
+            <End Role="LKACSoft_Customer" EntitySet="LKACSoft_Customer" />
+            <End Role="LKACSoft_Execution" EntitySet="LKACSoft_Execution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Feedback_LKACSoft_Execution" Association="Self.FK_LKACSoft_Feedback_LKACSoft_Execution">
+            <End Role="LKACSoft_Execution" EntitySet="LKACSoft_Execution" />
+            <End Role="LKACSoft_Feedback" EntitySet="LKACSoft_Feedback" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_JobTaskFile_LKACSoft_CustomerDocumentType" Association="Self.FK_LKACSoft_JobTaskFile_LKACSoft_CustomerDocumentType">
+            <End Role="LKACSoft_CustomerDocumentType" EntitySet="LKACSoft_CustomerDocumentType" />
+            <End Role="LKACSoft_JobTaskFile" EntitySet="LKACSoft_JobTaskFile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_JobTaskFile_LKACSoft_Execution" Association="Self.FK_LKACSoft_JobTaskFile_LKACSoft_Execution">
+            <End Role="LKACSoft_Execution" EntitySet="LKACSoft_Execution" />
+            <End Role="LKACSoft_JobTaskFile" EntitySet="LKACSoft_JobTaskFile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_RolePosition_LKACSoft_Department" Association="Self.FK_LKACSoft_RolePosition_LKACSoft_Department">
+            <End Role="LKACSoft_Department" EntitySet="LKACSoft_Department" />
+            <End Role="LKACSoft_RolePosition" EntitySet="LKACSoft_RolePosition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_RolePosition_Position" Association="Self.FK_LKACSoft_RolePosition_Position">
+            <End Role="LKACSoft_Position" EntitySet="LKACSoft_Position" />
+            <End Role="LKACSoft_RolePosition" EntitySet="LKACSoft_RolePosition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_UserNotification_LKACSoft_Notification" Association="Self.FK_LKACSoft_UserNotification_LKACSoft_Notification">
+            <End Role="LKACSoft_Notification" EntitySet="LKACSoft_Notification" />
+            <End Role="LKACSoft_UserNotification" EntitySet="LKACSoft_UserNotification" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_ab6e43_lkacsoftdbModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="LKACSoft_AccountantTeam">
+          <Key>
+            <PropertyRef Name="TeamID" />
+          </Key>
+          <Property Name="TeamID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TeamName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TeamLeader" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LKACSoft_Customer" Relationship="Self.FK_LKACSoft_Customer_LKACSoft_AccountantTeam" FromRole="LKACSoft_AccountantTeam" ToRole="LKACSoft_Customer" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Customer">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ShortName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LogoS3Key" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FilterLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="GetDocsDate" Type="Int32" />
+          <Property Name="DateCreate" Type="DateTime" Precision="0" />
+          <Property Name="Suspended" Type="Boolean" />
+          <Property Name="SuspendedTo" Type="DateTime" Precision="0" />
+          <Property Name="Dissolved" Type="Boolean" />
+          <Property Name="DissolvedDate" Type="DateTime" Precision="0" />
+          <Property Name="MainAccountant" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AssignedToCustomerSupport" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ResponsibleAccountantTeam" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LKACSoft_DepartmentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ContractExpiry" Type="DateTime" Precision="0" />
+          <Property Name="ContractSignedDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="LKACSoft_AccountantTeam" Relationship="Self.FK_LKACSoft_Customer_LKACSoft_AccountantTeam" FromRole="LKACSoft_Customer" ToRole="LKACSoft_AccountantTeam" />
+          <NavigationProperty Name="LKACSoft_Department" Relationship="Self.FK_LKACSoft_Customer_LKACSoft_Department" FromRole="LKACSoft_Customer" ToRole="LKACSoft_Department" />
+          <NavigationProperty Name="LKACSoft_Execution" Relationship="Self.FK_LKACSoft_Execution_LKACSoft_Customer" FromRole="LKACSoft_Customer" ToRole="LKACSoft_Execution" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Department">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Int32" />
+          <Property Name="Closed" Type="Boolean" />
+          <NavigationProperty Name="LKACSoft_Customer" Relationship="Self.FK_LKACSoft_Customer_LKACSoft_Department" FromRole="LKACSoft_Department" ToRole="LKACSoft_Customer" />
+          <NavigationProperty Name="LKACSoft_RolePosition" Relationship="Self.FK_LKACSoft_RolePosition_LKACSoft_Department" FromRole="LKACSoft_Department" ToRole="LKACSoft_RolePosition" />
+        </EntityType>
+        <EntityType Name="LKACSoft_DocumentLendingHistory">
+          <Key>
+            <PropertyRef Name="DocumentLendID" />
+          </Key>
+          <Property Name="DocumentLendID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LendExpiry" Type="DateTime" Precision="0" />
+          <Property Name="LendDate" Type="DateTime" Precision="0" />
+          <Property Name="ReturnedDate" Type="DateTime" Precision="0" />
+          <Property Name="LendStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LendDocument" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LKACSoft_DocumentType">
+          <Key>
+            <PropertyRef Name="DocumentTypeID" />
+          </Key>
+          <Property Name="DocumentTypeID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DocumentTypeName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Execution">
+          <Key>
+            <PropertyRef Name="ExecutionID" />
+          </Key>
+          <Property Name="ExecutionID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ExecutionName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="0" />
+          <Property Name="IsPeriodic" Type="Boolean" />
+          <Property Name="ProcessSchemaStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessSchemaID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RelatedToCustomer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LKACSoft_Customer" Relationship="Self.FK_LKACSoft_Execution_LKACSoft_Customer" FromRole="LKACSoft_Execution" ToRole="LKACSoft_Customer" />
+          <NavigationProperty Name="LKACSoft_Feedback" Relationship="Self.FK_LKACSoft_Feedback_LKACSoft_Execution" FromRole="LKACSoft_Execution" ToRole="LKACSoft_Feedback" />
+          <NavigationProperty Name="LKACSoft_JobTaskFile" Relationship="Self.FK_LKACSoft_JobTaskFile_LKACSoft_Execution" FromRole="LKACSoft_Execution" ToRole="LKACSoft_JobTaskFile" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Feedback">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FromWhoCode" Type="Int32" />
+          <Property Name="ToWhomCode" Type="Int32" />
+          <Property Name="FromCustomer" Type="Boolean" />
+          <Property Name="ToCustomer" Type="Boolean" />
+          <Property Name="FeedbackMsg" Type="String" MaxLength="2048" FixedLength="false" Unicode="true" />
+          <Property Name="DateFeedback" Type="DateTime" Precision="0" />
+          <Property Name="ExecutionID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LKACSoft_Execution" Relationship="Self.FK_LKACSoft_Feedback_LKACSoft_Execution" FromRole="LKACSoft_Feedback" ToRole="LKACSoft_Execution" />
+        </EntityType>
+        <EntityType Name="LKACSoft_JobTaskFile">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FileType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FileS3Key" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedAt" Type="DateTime" Precision="0" />
+          <Property Name="AccountantID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AccountingStatus" Type="Int32" />
+          <Property Name="AccountantReceivedAt" Type="DateTime" Precision="0" />
+          <Property Name="ReadyToBeReturnedAt" Type="DateTime" Precision="0" />
+          <Property Name="ArchivingStatus" Type="Int32" />
+          <Property Name="PhysicalLocation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ArchivedDate" Type="DateTime" Precision="0" />
+          <Property Name="ReturnedDate" Type="DateTime" Precision="0" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RelatedToExecution" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LKACSoft_Execution" Relationship="Self.FK_LKACSoft_JobTaskFile_LKACSoft_Execution" FromRole="LKACSoft_JobTaskFile" ToRole="LKACSoft_Execution" />
+          <NavigationProperty Name="LKACSoft_CustomerDocumentType" Relationship="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_JobTaskFile_LKACSoft_CustomerDocumentType" FromRole="LKACSoft_JobTaskFile" ToRole="LKACSoft_CustomerDocumentType" />
+        </EntityType>
+        <EntityType Name="LKACSoft_Position">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayOrder" Type="Int32" />
+          <NavigationProperty Name="LKACSoft_RolePosition" Relationship="Self.FK_LKACSoft_RolePosition_Position" FromRole="LKACSoft_Position" ToRole="LKACSoft_RolePosition" />
+        </EntityType>
+        <EntityType Name="LKACSoft_RolePosition">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LKACSoft_PositionCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="LKACSoft_DepartmentCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LKACSoft_Department" Relationship="Self.FK_LKACSoft_RolePosition_LKACSoft_Department" FromRole="LKACSoft_RolePosition" ToRole="LKACSoft_Department" />
+          <NavigationProperty Name="LKACSoft_Position" Relationship="Self.FK_LKACSoft_RolePosition_Position" FromRole="LKACSoft_RolePosition" ToRole="LKACSoft_Position" />
+        </EntityType>
+        <Association Name="FK_LKACSoft_Customer_LKACSoft_AccountantTeam">
+          <End Role="LKACSoft_AccountantTeam" Type="Self.LKACSoft_AccountantTeam" Multiplicity="0..1" />
+          <End Role="LKACSoft_Customer" Type="Self.LKACSoft_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_AccountantTeam">
+              <PropertyRef Name="TeamID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Customer">
+              <PropertyRef Name="ResponsibleAccountantTeam" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Customer_LKACSoft_Department">
+          <End Role="LKACSoft_Department" Type="Self.LKACSoft_Department" Multiplicity="0..1" />
+          <End Role="LKACSoft_Customer" Type="Self.LKACSoft_Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Department">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="LKACSoft_Customer">
+              <PropertyRef Name="LKACSoft_DepartmentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Execution_LKACSoft_Customer">
+          <End Role="LKACSoft_Customer" Type="Self.LKACSoft_Customer" Multiplicity="0..1" />
+          <End Role="LKACSoft_Execution" Type="Self.LKACSoft_Execution" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Customer">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="LKACSoft_Execution">
+              <PropertyRef Name="RelatedToCustomer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_RolePosition_LKACSoft_Department">
+          <End Role="LKACSoft_Department" Type="Self.LKACSoft_Department" Multiplicity="0..1" />
+          <End Role="LKACSoft_RolePosition" Type="Self.LKACSoft_RolePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Department">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="LKACSoft_RolePosition">
+              <PropertyRef Name="LKACSoft_DepartmentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_Feedback_LKACSoft_Execution">
+          <End Role="LKACSoft_Execution" Type="Self.LKACSoft_Execution" Multiplicity="0..1" />
+          <End Role="LKACSoft_Feedback" Type="Self.LKACSoft_Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Execution">
+              <PropertyRef Name="ExecutionID" />
+            </Principal>
+            <Dependent Role="LKACSoft_Feedback">
+              <PropertyRef Name="ExecutionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_JobTaskFile_LKACSoft_Execution">
+          <End Role="LKACSoft_Execution" Type="Self.LKACSoft_Execution" Multiplicity="0..1" />
+          <End Role="LKACSoft_JobTaskFile" Type="Self.LKACSoft_JobTaskFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Execution">
+              <PropertyRef Name="ExecutionID" />
+            </Principal>
+            <Dependent Role="LKACSoft_JobTaskFile">
+              <PropertyRef Name="RelatedToExecution" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LKACSoft_RolePosition_Position">
+          <End Role="LKACSoft_Position" Type="Self.LKACSoft_Position" Multiplicity="0..1" />
+          <End Role="LKACSoft_RolePosition" Type="Self.LKACSoft_RolePosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Position">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="LKACSoft_RolePosition">
+              <PropertyRef Name="LKACSoft_PositionCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_ab6e43_lkacsoftdbEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LKACSoft_AccountantTeam" EntityType="Self.LKACSoft_AccountantTeam" />
+          <EntitySet Name="LKACSoft_Customer" EntityType="Self.LKACSoft_Customer" />
+          <EntitySet Name="LKACSoft_Department" EntityType="Self.LKACSoft_Department" />
+          <EntitySet Name="LKACSoft_DocumentLendingHistory" EntityType="Self.LKACSoft_DocumentLendingHistory" />
+          <EntitySet Name="LKACSoft_DocumentType" EntityType="Self.LKACSoft_DocumentType" />
+          <EntitySet Name="LKACSoft_Execution" EntityType="Self.LKACSoft_Execution" />
+          <EntitySet Name="LKACSoft_Feedback" EntityType="Self.LKACSoft_Feedback" />
+          <EntitySet Name="LKACSoft_JobTaskFile" EntityType="Self.LKACSoft_JobTaskFile" />
+          <EntitySet Name="LKACSoft_Position" EntityType="Self.LKACSoft_Position" />
+          <EntitySet Name="LKACSoft_RolePosition" EntityType="Self.LKACSoft_RolePosition" />
+          <AssociationSet Name="FK_LKACSoft_Customer_LKACSoft_AccountantTeam" Association="Self.FK_LKACSoft_Customer_LKACSoft_AccountantTeam">
+            <End Role="LKACSoft_AccountantTeam" EntitySet="LKACSoft_AccountantTeam" />
+            <End Role="LKACSoft_Customer" EntitySet="LKACSoft_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Customer_LKACSoft_Department" Association="Self.FK_LKACSoft_Customer_LKACSoft_Department">
+            <End Role="LKACSoft_Department" EntitySet="LKACSoft_Department" />
+            <End Role="LKACSoft_Customer" EntitySet="LKACSoft_Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Execution_LKACSoft_Customer" Association="Self.FK_LKACSoft_Execution_LKACSoft_Customer">
+            <End Role="LKACSoft_Customer" EntitySet="LKACSoft_Customer" />
+            <End Role="LKACSoft_Execution" EntitySet="LKACSoft_Execution" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_RolePosition_LKACSoft_Department" Association="Self.FK_LKACSoft_RolePosition_LKACSoft_Department">
+            <End Role="LKACSoft_Department" EntitySet="LKACSoft_Department" />
+            <End Role="LKACSoft_RolePosition" EntitySet="LKACSoft_RolePosition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_Feedback_LKACSoft_Execution" Association="Self.FK_LKACSoft_Feedback_LKACSoft_Execution">
+            <End Role="LKACSoft_Execution" EntitySet="LKACSoft_Execution" />
+            <End Role="LKACSoft_Feedback" EntitySet="LKACSoft_Feedback" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_JobTaskFile_LKACSoft_Execution" Association="Self.FK_LKACSoft_JobTaskFile_LKACSoft_Execution">
+            <End Role="LKACSoft_Execution" EntitySet="LKACSoft_Execution" />
+            <End Role="LKACSoft_JobTaskFile" EntitySet="LKACSoft_JobTaskFile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LKACSoft_RolePosition_Position" Association="Self.FK_LKACSoft_RolePosition_Position">
+            <End Role="LKACSoft_Position" EntitySet="LKACSoft_Position" />
+            <End Role="LKACSoft_RolePosition" EntitySet="LKACSoft_RolePosition" />
+          </AssociationSet>
+          <EntitySet Name="LKACSoft_Notification" EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_Notification" />
+          <EntitySet Name="LKACSoft_UserNotification" EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_UserNotification" />
+          <AssociationSet Name="FK_LKACSoft_UserNotification_LKACSoft_Notification" Association="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_UserNotification_LKACSoft_Notification">
+            <End Role="LKACSoft_Notification" EntitySet="LKACSoft_Notification" />
+            <End Role="LKACSoft_UserNotification" EntitySet="LKACSoft_UserNotification" />
+          </AssociationSet>
+          <EntitySet Name="LKACSoft_CustomerDocumentType" EntityType="db_ab6e43_lkacsoftdbModel1.LKACSoft_CustomerDocumentType" />
+          <AssociationSet Name="FK_LKACSoft_JobTaskFile_LKACSoft_CustomerDocumentType" Association="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_JobTaskFile_LKACSoft_CustomerDocumentType">
+            <End Role="LKACSoft_CustomerDocumentType" EntitySet="LKACSoft_CustomerDocumentType" />
+            <End Role="LKACSoft_JobTaskFile" EntitySet="LKACSoft_JobTaskFile" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="LKACSoft_Notification">
+          <Key>
+            <PropertyRef Name="NotificationID" />
+          </Key>
+          <Property Name="NotificationID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Detail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UserCreate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="LKACSoft_UserNotification" Relationship="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_UserNotification_LKACSoft_Notification" FromRole="LKACSoft_Notification" ToRole="LKACSoft_UserNotification" />
+        </EntityType>
+        <EntityType Name="LKACSoft_UserNotification">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="NotificationID" />
+          </Key>
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NotificationID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LKACSoft_Notification" Relationship="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_UserNotification_LKACSoft_Notification" FromRole="LKACSoft_UserNotification" ToRole="LKACSoft_Notification" />
+        </EntityType>
+        <Association Name="FK_LKACSoft_UserNotification_LKACSoft_Notification">
+          <End Type="db_ab6e43_lkacsoftdbModel1.LKACSoft_Notification" Role="LKACSoft_Notification" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="db_ab6e43_lkacsoftdbModel1.LKACSoft_UserNotification" Role="LKACSoft_UserNotification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LKACSoft_Notification">
+              <PropertyRef Name="NotificationID" />
+            </Principal>
+            <Dependent Role="LKACSoft_UserNotification">
+              <PropertyRef Name="NotificationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LKACSoft_CustomerDocumentType">
+          <Key>
+            <PropertyRef Name="CustomerCode" />
+            <PropertyRef Name="DocumentTypeID" />
+          </Key>
+          <Property Name="CustomerCode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentTypeID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentReceivingMechanism" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AvgAmount" Type="Int32" />
+          <Property Name="RegisteredAmount" Type="Int32" />
+          <NavigationProperty Name="LKACSoft_JobTaskFile" Relationship="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_JobTaskFile_LKACSoft_CustomerDocumentType" FromRole="LKACSoft_CustomerDocumentType" ToRole="LKACSoft_JobTaskFile" />
+        </EntityType>
+        <Association Name="FK_LKACSoft_JobTaskFile_LKACSoft_CustomerDocumentType">
+          <End Type="db_ab6e43_lkacsoftdbModel1.LKACSoft_CustomerDocumentType" Role="LKACSoft_CustomerDocumentType" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="db_ab6e43_lkacsoftdbModel1.LKACSoft_JobTaskFile" Role="LKACSoft_JobTaskFile" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_ab6e43_lkacsoftdbModel1StoreContainer" CdmEntityContainer="db_ab6e43_lkacsoftdbEntities1">
+          <EntitySetMapping Name="LKACSoft_AccountantTeam">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel1.LKACSoft_AccountantTeam">
+              <MappingFragment StoreEntitySet="LKACSoft_AccountantTeam">
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="TeamLeader" ColumnName="TeamLeader" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_Customer">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel1.LKACSoft_Customer">
+              <MappingFragment StoreEntitySet="LKACSoft_Customer">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="LogoS3Key" ColumnName="LogoS3Key" />
+                <ScalarProperty Name="FilterLocation" ColumnName="FilterLocation" />
+                <ScalarProperty Name="GetDocsDate" ColumnName="GetDocsDate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="Suspended" ColumnName="Suspended" />
+                <ScalarProperty Name="SuspendedTo" ColumnName="SuspendedTo" />
+                <ScalarProperty Name="Dissolved" ColumnName="Dissolved" />
+                <ScalarProperty Name="DissolvedDate" ColumnName="DissolvedDate" />
+                <ScalarProperty Name="MainAccountant" ColumnName="MainAccountant" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="AssignedToCustomerSupport" ColumnName="AssignedToCustomerSupport" />
+                <ScalarProperty Name="ResponsibleAccountantTeam" ColumnName="ResponsibleAccountantTeam" />
+                <ScalarProperty Name="LKACSoft_DepartmentCode" ColumnName="LKACSoft_DepartmentCode" />
+                <ScalarProperty Name="ContractExpiry" ColumnName="ContractExpiry" />
+                <ScalarProperty Name="ContractSignedDate" ColumnName="ContractSignedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_Department">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel1.LKACSoft_Department">
+              <MappingFragment StoreEntitySet="LKACSoft_Department">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="Closed" ColumnName="Closed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_DocumentLendingHistory">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel1.LKACSoft_DocumentLendingHistory">
+              <MappingFragment StoreEntitySet="LKACSoft_DocumentLendingHistory">
+                <ScalarProperty Name="DocumentLendID" ColumnName="DocumentLendID" />
+                <ScalarProperty Name="LendExpiry" ColumnName="LendExpiry" />
+                <ScalarProperty Name="LendDate" ColumnName="LendDate" />
+                <ScalarProperty Name="ReturnedDate" ColumnName="ReturnedDate" />
+                <ScalarProperty Name="LendStatus" ColumnName="LendStatus" />
+                <ScalarProperty Name="LendDocument" ColumnName="LendDocument" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_DocumentType">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel1.LKACSoft_DocumentType">
+              <MappingFragment StoreEntitySet="LKACSoft_DocumentType">
+                <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+                <ScalarProperty Name="DocumentTypeName" ColumnName="DocumentTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_Execution">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel1.LKACSoft_Execution">
+              <MappingFragment StoreEntitySet="LKACSoft_Execution">
+                <ScalarProperty Name="ExecutionID" ColumnName="ExecutionID" />
+                <ScalarProperty Name="ExecutionName" ColumnName="ExecutionName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="IsPeriodic" ColumnName="IsPeriodic" />
+                <ScalarProperty Name="ProcessSchemaStatus" ColumnName="ProcessSchemaStatus" />
+                <ScalarProperty Name="ProcessSchemaID" ColumnName="ProcessSchemaID" />
+                <ScalarProperty Name="RelatedToCustomer" ColumnName="RelatedToCustomer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_Feedback">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel1.LKACSoft_Feedback">
+              <MappingFragment StoreEntitySet="LKACSoft_Feedback">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="FromWhoCode" ColumnName="FromWhoCode" />
+                <ScalarProperty Name="ToWhomCode" ColumnName="ToWhomCode" />
+                <ScalarProperty Name="FromCustomer" ColumnName="FromCustomer" />
+                <ScalarProperty Name="ToCustomer" ColumnName="ToCustomer" />
+                <ScalarProperty Name="FeedbackMsg" ColumnName="FeedbackMsg" />
+                <ScalarProperty Name="DateFeedback" ColumnName="DateFeedback" />
+                <ScalarProperty Name="ExecutionID" ColumnName="ExecutionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_JobTaskFile">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel1.LKACSoft_JobTaskFile">
+              <MappingFragment StoreEntitySet="LKACSoft_JobTaskFile">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="FileS3Key" ColumnName="FileS3Key" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="AccountantID" ColumnName="AccountantID" />
+                <ScalarProperty Name="AccountingStatus" ColumnName="AccountingStatus" />
+                <ScalarProperty Name="AccountantReceivedAt" ColumnName="AccountantReceivedAt" />
+                <ScalarProperty Name="ReadyToBeReturnedAt" ColumnName="ReadyToBeReturnedAt" />
+                <ScalarProperty Name="ArchivingStatus" ColumnName="ArchivingStatus" />
+                <ScalarProperty Name="PhysicalLocation" ColumnName="PhysicalLocation" />
+                <ScalarProperty Name="ArchivedDate" ColumnName="ArchivedDate" />
+                <ScalarProperty Name="ReturnedDate" ColumnName="ReturnedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="RelatedToExecution" ColumnName="RelatedToExecution" />
+                <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_Position">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel1.LKACSoft_Position">
+              <MappingFragment StoreEntitySet="LKACSoft_Position">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_RolePosition">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel1.LKACSoft_RolePosition">
+              <MappingFragment StoreEntitySet="LKACSoft_RolePosition">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="LKACSoft_PositionCode" ColumnName="LKACSoft_PositionCode" />
+                <ScalarProperty Name="LKACSoft_DepartmentCode" ColumnName="LKACSoft_DepartmentCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_Notification">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel1.LKACSoft_Notification">
+              <MappingFragment StoreEntitySet="LKACSoft_Notification">
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_UserNotification">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel1.LKACSoft_UserNotification">
+              <MappingFragment StoreEntitySet="LKACSoft_UserNotification">
+                <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LKACSoft_CustomerDocumentType">
+            <EntityTypeMapping TypeName="db_ab6e43_lkacsoftdbModel1.LKACSoft_CustomerDocumentType">
+              <MappingFragment StoreEntitySet="LKACSoft_CustomerDocumentType">
+                <ScalarProperty Name="RegisteredAmount" ColumnName="RegisteredAmount" />
+                <ScalarProperty Name="AvgAmount" ColumnName="AvgAmount" />
+                <ScalarProperty Name="DocumentReceivingMechanism" ColumnName="DocumentReceivingMechanism" />
+                <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentTypeID" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_LKACSoft_JobTaskFile_LKACSoft_CustomerDocumentType" TypeName="db_ab6e43_lkacsoftdbModel1.FK_LKACSoft_JobTaskFile_LKACSoft_CustomerDocumentType" StoreEntitySet="LKACSoft_JobTaskFile">
+            <EndProperty Name="LKACSoft_JobTaskFile">
+              <ScalarProperty Name="Code" ColumnName="Code" />
+            </EndProperty>
+            <EndProperty Name="LKACSoft_CustomerDocumentType">
+              <ScalarProperty Name="DocumentTypeID" ColumnName="DocumentType" />
+              <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+            </EndProperty>
+            <Condition ColumnName="CustomerCode" IsNull="false" />
+            <Condition ColumnName="DocumentType" IsNull="false" />
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3d2ed3078fa64e6f8d0e8d767ccce03b" Name="Diagram1" ZoomLevel="29">
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_Priority" Width="1.5" PointX="3.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_ProcessSchema" Width="1.5" PointX="1.5" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_ProcessSchemaStatus" Width="1.5" PointX="3.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_ProcessStatus" Width="1.5" PointX="1.5" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_RequestToCustomerSupport" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_Task" Width="1.5" PointX="6" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_TaskComment" Width="1.5" PointX="8.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_TaskStatus" Width="1.5" PointX="3.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_TaskType" Width="1.5" PointX="3.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_TaskTypeResponsiblePosition" Width="1.5" PointX="8.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_TaskTypeStatus" Width="1.5" PointX="6" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_User" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_UserPosition" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_Task_LKACSoft_Priority" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessSchema" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_ProcessSchemaStatus_LKACSoft_ProcessStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_TaskTypeStatus_LKACSoft_AssociatedProcessSchemaStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_TaskTypeStatus_LKACSoft_RequiredProcessSchemaStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_CustomerSupportID" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_RequestToCustomerSupport_LKACSoft_User_StaffID" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_Task_LKACSoft_TaskStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_Task_LKACSoft_TaskType" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_Task_LKACSoft_User_AssignedTo" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_Task_LKACSoft_User_ReviewedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_TaskComment_LKACSoft_Task" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_TaskComment_LKACSoft_User" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_TaskTypeStatus_LKACSoft_TaskType" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_TaskTypeResponsiblePosition_LKACSoft_TaskTypeStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="db_ab6e43_lkacsoftdbModel2.FK_LKACSoft_UserPosition_LKACSoft_User" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_LendDocument" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_AccountingStatus" Width="1.5" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="db_ab6e43_lkacsoftdbModel2.LKACSoft_ArchivingStatus" Width="1.5" PointX="8.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
